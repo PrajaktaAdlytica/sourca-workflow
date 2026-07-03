@@ -9,38 +9,161 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SigninRouteImport } from './routes/signin'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsRiskRouteImport } from './routes/products.risk'
+import { Route as ProductsRfqRouteImport } from './routes/products.rfq'
+import { Route as ProductsFindRouteImport } from './routes/products.find'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsRiskRoute = ProductsRiskRouteImport.update({
+  id: '/products/risk',
+  path: '/products/risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRfqRoute = ProductsRfqRouteImport.update({
+  id: '/products/rfq',
+  path: '/products/rfq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsFindRoute = ProductsFindRouteImport.update({
+  id: '/products/find',
+  path: '/products/find',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/request-demo': typeof RequestDemoRoute
+  '/signin': typeof SigninRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/products/find': typeof ProductsFindRoute
+  '/products/rfq': typeof ProductsRfqRoute
+  '/products/risk': typeof ProductsRiskRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/request-demo'
+    | '/signin'
+    | '/sitemap.xml'
+    | '/products/find'
+    | '/products/rfq'
+    | '/products/risk'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  RequestDemoRoute: typeof RequestDemoRoute
+  SigninRoute: typeof SigninRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ProductsFindRoute: typeof ProductsFindRoute
+  ProductsRfqRoute: typeof ProductsRfqRoute
+  ProductsRiskRoute: typeof ProductsRiskRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +171,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/risk': {
+      id: '/products/risk'
+      path: '/products/risk'
+      fullPath: '/products/risk'
+      preLoaderRoute: typeof ProductsRiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/rfq': {
+      id: '/products/rfq'
+      path: '/products/rfq'
+      fullPath: '/products/rfq'
+      preLoaderRoute: typeof ProductsRfqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/find': {
+      id: '/products/find'
+      path: '/products/find'
+      fullPath: '/products/find'
+      preLoaderRoute: typeof ProductsFindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  RequestDemoRoute: RequestDemoRoute,
+  SigninRoute: SigninRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ProductsFindRoute: ProductsFindRoute,
+  ProductsRfqRoute: ProductsRfqRoute,
+  ProductsRiskRoute: ProductsRiskRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

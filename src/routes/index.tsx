@@ -1,24 +1,324 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight, Check, TrendingDown, ShieldCheck, Layers3, Users, Wallet, Eye, FileCheck2, Search, ScrollText, Truck, Globe, Leaf } from "lucide-react";
+import { Shell } from "@/components/Shell";
+import { ButtonLink } from "@/components/Button";
+import { HeroWorkflow } from "@/components/HeroWorkflow";
+import { TrustedBy } from "@/components/TrustedBy";
+import { ProblemCards } from "@/components/ProblemCards";
+import { SupplierDashboard } from "@/components/SupplierDashboard";
+import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
+import { CountUp, Reveal } from "@/components/Motion";
+import { Pricing } from "@/components/Pricing";
+import { FAQ } from "@/components/FAQ";
+import { CTA } from "@/components/CTA";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Sourca — Find better suppliers. Source with confidence." },
+      { name: "description", content: "AI-powered procurement platform for supplier discovery, RFQ management and supplier risk intelligence." },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <Shell>
+      {/* HERO */}
+      <section className="relative">
+        <div className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-20 md:pb-24 min-h-[82vh] flex items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-center w-full">
+            <div>
+              <Eyebrow>AI Procurement Platform</Eyebrow>
+              <h1 className="mt-4 text-[42px] sm:text-5xl lg:text-[64px] leading-[1.02] font-semibold text-primary tracking-tight text-balance">
+                Find better suppliers.<br />
+                Source with <span className="font-editorial text-accent">confidence.</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-[16px] text-muted-foreground leading-relaxed">
+                Search suppliers, compare quotations, evaluate risk and manage procurement workflows from one intelligent sourcing platform.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <ButtonLink to="/request-demo" variant="primary" size="lg">
+                  Request Demo <ArrowRight className="h-4 w-4" />
+                </ButtonLink>
+                <ButtonLink href="#platform" variant="outline" size="lg">Explore Platform</ButtonLink>
+              </div>
+              <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
+                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> 120K+ suppliers</div>
+                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> 98 countries</div>
+                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> EU-hosted</div>
+              </div>
+            </div>
+            <div><HeroWorkflow /></div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEM */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <SectionHeader eyebrow="The Problem" title="Sourcing shouldn't take weeks." />
+        <div className="mt-14"><ProblemCards /></div>
+      </section>
+
+      <TrustedBy />
+
+      {/* SOLUTION / PRODUCTS */}
+      <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 items-start">
+          <div>
+            <Eyebrow>The Solution</Eyebrow>
+            <h2 className="mt-3 text-4xl lg:text-5xl font-semibold text-primary tracking-tight leading-[1.05] text-balance">
+              One intelligent <span className="font-editorial text-accent">sourcing workspace.</span>
+            </h2>
+            <p className="mt-5 text-[15px] text-muted-foreground leading-relaxed max-w-md">
+              Manage supplier discovery, RFQs and supplier risk inside one connected procurement platform.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-3">
+            <ProductCard
+              tone="orange" eyebrow="Find" title="Sourca Find" tagline="Supplier discovery."
+              to="/products/find"
+              preview={<FindPreview />}
+            />
+            <ProductCard
+              tone="teal" eyebrow="RFQ" title="Sourca RFQ" tagline="RFQ management."
+              to="/products/rfq"
+              preview={<RFQPreview />}
+            />
+            <ProductCard
+              tone="slate" eyebrow="Risk" title="Sourca Risk" tagline="Supplier intelligence."
+              to="/products/risk"
+              preview={<RiskPreview />}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATFORM */}
+      <section id="platform" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid lg:grid-cols-[1fr_2.2fr] gap-10 items-start">
+          <div>
+            <Eyebrow>The Platform</Eyebrow>
+            <h2 className="mt-3 text-4xl lg:text-5xl font-semibold text-primary tracking-tight leading-[1.05] text-balance">
+              Everything in <span className="font-editorial text-accent">one place.</span>
+            </h2>
+            <p className="mt-5 text-[15px] text-muted-foreground leading-relaxed max-w-md">
+              Real-time visibility across your entire procurement workflow.
+            </p>
+            <ul className="mt-6 space-y-2.5 text-sm text-primary/85">
+              {[
+                "Search and discover suppliers",
+                "Manage RFQs and quotations",
+                "Evaluate risk and performance",
+                "Make confident sourcing decisions",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" /> {t}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <ButtonLink href="#platform" variant="outline" size="md">Explore Platform</ButtonLink>
+            </div>
+          </div>
+          <Reveal><SupplierDashboard /></Reveal>
+        </div>
+      </section>
+
+      {/* BENEFITS */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <SectionHeader eyebrow="Key Benefits" title="Built for faster, smarter sourcing." description="Reduce procurement effort while improving supplier quality, transparency and decision-making across every sourcing event." />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+          {[
+            { icon: Users, t: "Better Suppliers", d: "Access a global network of qualified suppliers." },
+            { icon: TrendingDown, t: "Faster Procurement", d: "Reduce sourcing time from weeks to days." },
+            { icon: ShieldCheck, t: "Lower Risk", d: "Identify and mitigate supplier risks early." },
+            { icon: FileCheck2, t: "Centralised RFQs", d: "Manage all RFQs in one connected place." },
+            { icon: Wallet, t: "Better Pricing", d: "Compare quotes and negotiate with confidence." },
+            { icon: Eye, t: "Supplier Visibility", d: "Track performance and build stronger relationships." },
+          ].map((b) => (
+            <div key={b.t} className="surface-card card-hover p-5">
+              <div className="h-10 w-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center">
+                <b.icon className="h-5 w-5" />
+              </div>
+              <div className="mt-4 text-sm font-semibold text-primary">{b.t}</div>
+              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{b.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* STATISTICS */}
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { icon: Users, n: 120, s: "K+", l: "Suppliers" },
+            { icon: ScrollText, n: 3.8, s: "M+", l: "RFQs Managed", decimal: true },
+            { icon: TrendingDown, n: 64, s: "%", l: "Average Procurement Time Saved" },
+            { icon: Globe, n: 98, s: "", l: "Countries" },
+          ].map((k) => (
+            <div key={k.l} className="flex items-center gap-4">
+              <div className="h-11 w-11 rounded-lg bg-accent-soft text-accent flex items-center justify-center shrink-0">
+                <k.icon className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-semibold text-primary tracking-tight">
+                  {k.decimal ? "3.8M+" : <><CountUp to={k.n} suffix={k.s} /></>}
+                </div>
+                <div className="text-xs text-muted-foreground">{k.l}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="mx-auto max-w-7xl px-6 py-24">
+        <SectionHeader eyebrow="Pricing" title="Simple, transparent pricing." description="Choose the plan that fits your team today — scale as your procurement programme grows." />
+        <div className="mt-14"><Pricing /></div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="mx-auto max-w-7xl px-6 pb-8">
+        <SectionHeader eyebrow="Testimonials" title="Loved by procurement teams." />
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {[
+            {
+              q: "Sourca reduced supplier discovery from days to hours. The AI recommendations consistently surface qualified suppliers we would never have found manually.",
+              n: "Anna Kowalska", r: "Head of Procurement", c: "Warsaw Manufacturing Group",
+            },
+            {
+              q: "Managing RFQs across dozens of suppliers is now effortless. Everything from invitations to quotation comparisons happens inside one platform.",
+              n: "Piotr Nowak", r: "Strategic Sourcing Manager", c: "Baltic Components",
+            },
+            {
+              q: "Supplier risk monitoring has become part of our daily workflow. We receive alerts before issues affect our supply chain.",
+              n: "Katarzyna Zielińska", r: "Procurement Director", c: "Poznań Industrial Solutions",
+            },
+          ].map((t) => (
+            <div key={t.n} className="surface-card card-hover p-7 flex flex-col">
+              <div className="text-accent text-4xl leading-none font-editorial">"</div>
+              <p className="mt-2 text-[15px] text-primary/90 leading-relaxed flex-1">{t.q}</p>
+              <div className="mt-6 pt-5 border-t border-border">
+                <div className="text-sm font-semibold text-primary">{t.n}</div>
+                <div className="text-xs text-muted-foreground">{t.r} · {t.c}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <SectionHeader eyebrow="FAQ" title="Frequently asked questions." />
+        <div className="mt-12">
+          <FAQ items={[
+            { q: "How does Sourca find suppliers?", a: "Sourca searches verified supplier databases and combines procurement intelligence, certifications and AI recommendations to help you identify qualified suppliers quickly." },
+            { q: "Can I compare supplier quotations?", a: "Yes. Sourca automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace." },
+            { q: "Does Sourca monitor supplier risk?", a: "Yes. Sourca continuously monitors supplier compliance, ESG performance, financial health and operational risk." },
+            { q: "Can multiple procurement teams collaborate?", a: "Yes. Procurement managers, sourcing specialists, finance teams and stakeholders can collaborate throughout the sourcing process." },
+            { q: "Does Sourca integrate with ERP systems?", a: "Yes. Sourca is designed to integrate with ERP, procurement and supplier management systems." },
+            { q: "Is Sourca suitable for global sourcing?", a: "Yes. Sourca supports international supplier discovery, multi-country sourcing and cross-border procurement workflows." },
+          ]} />
+        </div>
+      </section>
+
+      <CTA />
+    </Shell>
+  );
+}
+
+function ProductCard({ tone, eyebrow, title, tagline, to, preview }: {
+  tone: "orange" | "teal" | "slate"; eyebrow: string; title: string; tagline: string; to: string; preview: React.ReactNode;
+}) {
+  const tones = {
+    orange: { chip: "bg-accent text-accent-foreground", accent: "text-accent" },
+    teal: { chip: "bg-teal text-white", accent: "text-teal" },
+    slate: { chip: "bg-slate-700 text-white", accent: "text-slate-700" },
+  }[tone];
+  return (
+    <div className="surface-card card-hover p-5 flex flex-col">
+      <div className="flex items-center gap-2">
+        <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${tones.chip}`}>
+          {eyebrow}
+        </span>
+      </div>
+      <div className="mt-3">
+        <div className="text-sm font-semibold text-primary">{title}</div>
+        <div className="text-xs text-muted-foreground">{tagline}</div>
+      </div>
+      <div className="mt-4 flex-1">{preview}</div>
+      <div className="mt-4">
+        <ButtonLink to={to} variant="link" size="sm" className={`${tones.accent} px-0`}>
+          Learn more <ArrowRight className="h-3.5 w-3.5" />
+        </ButtonLink>
+      </div>
+    </div>
+  );
+}
+
+function FindPreview() {
+  return (
+    <div className="space-y-1.5">
+      <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-border bg-background/50">
+        <Search className="h-3 w-3 text-muted-foreground" />
+        <span className="text-[10px] text-muted-foreground">Search suppliers…</span>
+      </div>
+      {[
+        { n: "ElectroCo", c: "Poland" }, { n: "Voltix", c: "Germany" }, { n: "TechWire", c: "Czechia" },
+      ].map((s) => (
+        <div key={s.n} className="flex items-center gap-2 p-2 rounded-md border border-border bg-background/40">
+          <div className="h-6 w-6 rounded-md bg-accent-soft text-accent flex items-center justify-center text-[8px] font-bold">{s.n[0]}</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-semibold text-primary truncate">{s.n}</div>
+            <div className="text-[9px] text-muted-foreground">{s.c}</div>
+          </div>
+          <div className="text-[9px] text-amber-500">★★★★★</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RFQPreview() {
+  return (
+    <table className="w-full text-[10px]">
+      <thead>
+        <tr className="text-muted-foreground text-left">
+          <th className="pb-1 font-normal">Supplier</th><th className="pb-1 font-normal">Price</th><th className="pb-1 font-normal">Delivery</th>
+        </tr>
+      </thead>
+      <tbody className="text-primary/80">
+        {[["ElectroCo", "$4.28", "12d"], ["Voltix", "$4.65", "15d"], ["TechWire", "$4.90", "18d"]].map((r) => (
+          <tr key={r[0]} className="border-t border-border">
+            <td className="py-1.5">{r[0]}</td><td className="py-1.5 tabular-nums">{r[1]}</td><td className="py-1.5 tabular-nums">{r[2]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+function RiskPreview() {
+  return (
+    <div className="flex items-start gap-3">
+      <div className="relative h-20 w-20">
+        <svg viewBox="0 0 64 64" className="h-20 w-20 -rotate-90">
+          <circle cx="32" cy="32" r="28" className="stroke-secondary" strokeWidth="6" fill="none" />
+          <circle cx="32" cy="32" r="28" className="stroke-emerald-500" strokeWidth="6" fill="none" strokeLinecap="round"
+            strokeDasharray={`${(32 / 100) * 2 * Math.PI * 28} ${2 * Math.PI * 28}`} />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="text-lg font-semibold text-primary leading-none">32</div>
+          <div className="text-[8px] text-emerald-700 mt-0.5">Low Risk</div>
+        </div>
+      </div>
+      <div className="flex-1 space-y-1.5 text-[10px]">
+        <div className="flex justify-between"><span className="text-primary/70">Compliance</span><span className="text-emerald-700 font-medium">Low</span></div>
+        <div className="flex justify-between"><span className="text-primary/70">Financial</span><span className="text-amber-700 font-medium">Medium</span></div>
+        <div className="flex justify-between"><span className="text-primary/70">ESG</span><span className="text-emerald-700 font-medium">Low</span></div>
+      </div>
     </div>
   );
 }
