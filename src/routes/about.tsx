@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Sourca" },
-      { name: "description", content: "Sourca is building the AI procurement platform for modern European sourcing teams." },
-      { property: "og:title", content: "About — Sourca" },
-      { property: "og:description", content: "Sourca is building the AI procurement platform for modern European sourcing teams." },
+      { title: "About — Sourcixa" },
+      { name: "description", content: "Sourcixa is building the AI procurement platform for modern European sourcing teams." },
+      { property: "og:title", content: "About — Sourcixa" },
+      { property: "og:description", content: "Sourcixa is building the AI procurement platform for modern European sourcing teams." },
     ],
   }),
   component: About,
@@ -21,12 +21,12 @@ function About() {
   return (
     <Shell>
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-16">
-        <Eyebrow>About Sourca</Eyebrow>
+        <Eyebrow>About Sourcixa</Eyebrow>
         <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
           Procurement, <span className="font-editorial text-accent">reimagined</span> around suppliers.
         </h1>
         <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed max-w-2xl">
-          Sourca was founded in Warsaw by procurement, supply-chain and engineering operators who spent years chasing supplier data across email, spreadsheets and disconnected tools. We built the platform we always wished existed — one workspace where supplier discovery, RFQs and risk intelligence finally live together.
+          Sourcixa was founded in Warsaw by procurement, supply-chain and engineering operators who spent years chasing supplier data across email, spreadsheets and disconnected tools. We built the platform we always wished existed — one workspace where supplier discovery, RFQs and risk intelligence finally live together.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink to="/request-demo" variant="primary" size="lg">Request Demo <ArrowRight className="h-4 w-4" /></ButtonLink>

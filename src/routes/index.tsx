@@ -15,7 +15,7 @@ import { CTA } from "@/components/CTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sourca — Find better suppliers. Source with confidence." },
+      { title: "Sourcixa — Find better suppliers. Source with confidence." },
       { name: "description", content: "AI-powered procurement platform for supplier discovery, RFQ management and supplier risk intelligence." },
     ],
   }),
@@ -77,17 +77,17 @@ function Home() {
           </div>
           <div className="grid gap-5 sm:grid-cols-3">
             <ProductCard
-              tone="orange" eyebrow="Find" title="Sourca Find" tagline="Supplier discovery."
+              tone="orange" eyebrow="Find" title="Sourcixa Find" tagline="Supplier discovery."
               to="/products/find"
               preview={<FindPreview />}
             />
             <ProductCard
-              tone="teal" eyebrow="RFQ" title="Sourca RFQ" tagline="RFQ management."
+              tone="teal" eyebrow="RFQ" title="Sourcixa RFQ" tagline="RFQ management."
               to="/products/rfq"
               preview={<RFQPreview />}
             />
             <ProductCard
-              tone="slate" eyebrow="Risk" title="Sourca Risk" tagline="Supplier intelligence."
+              tone="slate" eyebrow="Risk" title="Sourcixa Risk" tagline="Supplier intelligence."
               to="/products/risk"
               preview={<RiskPreview />}
             />
@@ -185,7 +185,7 @@ function Home() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {[
             {
-              q: "Sourca reduced supplier discovery from days to hours. The AI recommendations consistently surface qualified suppliers we would never have found manually.",
+              q: "Sourcixa reduced supplier discovery from days to hours. The AI recommendations consistently surface qualified suppliers we would never have found manually.",
               n: "Anna Kowalska", r: "Head of Procurement", c: "Warsaw Manufacturing Group",
             },
             {
@@ -214,12 +214,12 @@ function Home() {
         <SectionHeader eyebrow="FAQ" title="Frequently asked questions." />
         <div className="mt-12">
           <FAQ items={[
-            { q: "How does Sourca find suppliers?", a: "Sourca searches verified supplier databases and combines procurement intelligence, certifications and AI recommendations to help you identify qualified suppliers quickly." },
-            { q: "Can I compare supplier quotations?", a: "Yes. Sourca automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace." },
-            { q: "Does Sourca monitor supplier risk?", a: "Yes. Sourca continuously monitors supplier compliance, ESG performance, financial health and operational risk." },
+            { q: "How does Sourcixa find suppliers?", a: "Sourcixa searches verified supplier databases and combines procurement intelligence, certifications and AI recommendations to help you identify qualified suppliers quickly." },
+            { q: "Can I compare supplier quotations?", a: "Yes. Sourcixa automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace." },
+            { q: "Does Sourcixa monitor supplier risk?", a: "Yes. Sourcixa continuously monitors supplier compliance, ESG performance, financial health and operational risk." },
             { q: "Can multiple procurement teams collaborate?", a: "Yes. Procurement managers, sourcing specialists, finance teams and stakeholders can collaborate throughout the sourcing process." },
-            { q: "Does Sourca integrate with ERP systems?", a: "Yes. Sourca is designed to integrate with ERP, procurement and supplier management systems." },
-            { q: "Is Sourca suitable for global sourcing?", a: "Yes. Sourca supports international supplier discovery, multi-country sourcing and cross-border procurement workflows." },
+            { q: "Does Sourcixa integrate with ERP systems?", a: "Yes. Sourcixa is designed to integrate with ERP, procurement and supplier management systems." },
+            { q: "Is Sourcixa suitable for global sourcing?", a: "Yes. Sourcixa supports international supplier discovery, multi-country sourcing and cross-border procurement workflows." },
           ]} />
         </div>
       </section>

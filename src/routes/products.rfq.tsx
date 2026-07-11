@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/rfq")({
   head: () => ({
     meta: [
-      { title: "Sourca RFQ — RFQ Management" },
+      { title: "Sourcixa RFQ — RFQ Management" },
       { name: "description", content: "Create RFQs, invite suppliers, receive bids and compare pricing from one collaborative workspace." },
-      { property: "og:title", content: "Sourca RFQ — RFQ Management" },
+      { property: "og:title", content: "Sourcixa RFQ — RFQ Management" },
       { property: "og:description", content: "Create RFQs, invite suppliers, receive bids and compare pricing from one collaborative workspace." },
     ],
   }),
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/products/rfq")({
         "Build a defensible audit trail",
       ]}
       faq={[
-        { q: "Can we run multi-round RFQs?", a: "Yes — Sourca supports single-round, multi-round and Dutch-auction style negotiations." },
+        { q: "Can we run multi-round RFQs?", a: "Yes — Sourcixa supports single-round, multi-round and Dutch-auction style negotiations." },
         { q: "Do suppliers need an account?", a: "Suppliers receive a secure link to a lightweight portal — no account required." },
         { q: "Can we award to multiple suppliers?", a: "Yes — split awards with allocated volumes and per-line commercial terms are fully supported." },
       ]}

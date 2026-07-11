@@ -1,23 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
-  <rect x="2" y="4" width="40" height="40" rx="12" fill="#C2410C" />
-  <path
-    d="M28.5 14.5h-7.4c-2.5 0-4.6 2-4.6 4.5s2.1 4.5 4.6 4.5h1.8c1.3 0 2.4 1 2.4 2.3 0 1.3-1.1 2.3-2.4 2.3H15.5"
-    stroke="#FFFFFF"
-    stroke-width="4.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <circle cx="29" cy="14.5" r="2.6" fill="#FFFFFF" fill-opacity="0.92" />
-  <circle cx="15" cy="31.5" r="2.6" fill="#FFFFFF" fill-opacity="0.92" />
-  <text
-    x="58"
-    y="31"
-    fill="#FFFFFF"
-    font-family="Inter, Arial, Helvetica, sans-serif"
-    font-size="24"
-    font-weight="600"
-    letter-spacing="-0.6"
-  >
-    Sourca
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" fill="none" role="img" aria-label="Sourcixa">
+  <defs>
+    <linearGradient id="sourcixaCoreLight" x1="4" y1="5" x2="42" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D84A18"/>
+      <stop offset="1" stop-color="#8F2E0E"/>
+    </linearGradient>
+    <linearGradient id="sourcixaFlowLight" x1="13" y1="12" x2="35" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#25C7A4"/>
+      <stop offset="1" stop-color="#0B8F7E"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="4" width="40" height="40" rx="12" fill="url(#sourcixaCoreLight)" />
+  <path d="M13 18C17.8 13.2 26.2 13.2 31 18" stroke="#FFF7ED" stroke-width="4" stroke-linecap="round" />
+  <path d="M13 30C17.8 34.8 26.2 34.8 31 30" stroke="#FFF7ED" stroke-width="4" stroke-linecap="round" />
+  <path d="M16 24H30" stroke="#FFF7ED" stroke-width="4" stroke-linecap="round" />
+  <circle cx="13" cy="18" r="3.5" fill="url(#sourcixaFlowLight)" />
+  <circle cx="31" cy="18" r="3.5" fill="url(#sourcixaFlowLight)" />
+  <circle cx="13" cy="30" r="3.5" fill="url(#sourcixaFlowLight)" />
+  <circle cx="31" cy="30" r="3.5" fill="url(#sourcixaFlowLight)" />
+  <rect x="20" y="20" width="8" height="8" rx="2.4" fill="#0B8F7E" />
+  <path d="M22.2 24.1L23.8 25.7L26.4 22.5" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="58" y="31" fill="#FFFFFF" font-family="Inter, Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="-0.6">Sourcixa</text>
 </svg>

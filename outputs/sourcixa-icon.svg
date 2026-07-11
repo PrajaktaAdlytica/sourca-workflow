@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" role="img" aria-label="Sourcixa">
+  <defs>
+    <linearGradient id="sourcixaIconCore" x1="20" y1="20" x2="236" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D84A18"/>
+      <stop offset="1" stop-color="#8F2E0E"/>
+    </linearGradient>
+    <linearGradient id="sourcixaIconFlow" x1="72" y1="64" x2="192" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#25C7A4"/>
+      <stop offset="1" stop-color="#0B8F7E"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="64" fill="url(#sourcixaIconCore)"/>
+  <path d="M76 96C104 68 152 68 180 96" stroke="#FFF7ED" stroke-width="22" stroke-linecap="round"/>
+  <path d="M76 160C104 188 152 188 180 160" stroke="#FFF7ED" stroke-width="22" stroke-linecap="round"/>
+  <path d="M92 128H164" stroke="#FFF7ED" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="76" cy="96" r="19" fill="url(#sourcixaIconFlow)"/>
+  <circle cx="180" cy="96" r="19" fill="url(#sourcixaIconFlow)"/>
+  <circle cx="76" cy="160" r="19" fill="url(#sourcixaIconFlow)"/>
+  <circle cx="180" cy="160" r="19" fill="url(#sourcixaIconFlow)"/>
+  <rect x="108" y="108" width="48" height="48" rx="14" fill="#0B8F7E"/>
+  <path d="M120 132L129.5 141.5L146 120" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

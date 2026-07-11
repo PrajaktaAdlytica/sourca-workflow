@@ -47,7 +47,7 @@
 :root {
   --radius: 0.75rem;
 
-  /* Sourca palette — burnt orange + teal on a neutral canvas */
+  /* Sourcixa palette — burnt orange + teal on a neutral canvas */
   --background: oklch(0.985 0.005 240);          /* #F8FAFC */
   --foreground: oklch(0.16 0.03 250);            /* near-black slate */
   --surface: oklch(1 0 0);

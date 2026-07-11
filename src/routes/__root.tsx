@@ -42,8 +42,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const TITLE = "Sourca — AI Procurement Platform for Supplier Sourcing";
-const DESC = "Sourca is the AI procurement platform for supplier discovery, RFQ management and supplier risk intelligence. Find better suppliers and source with confidence.";
+const TITLE = "Sourcixa — AI Procurement Platform for Supplier Sourcing";
+const DESC = "Sourcixa is the AI procurement platform for supplier discovery, RFQ management and supplier risk intelligence. Find better suppliers and source with confidence.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -52,26 +52,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "author", content: "Sourca" },
+      { name: "author", content: "Sourcixa" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Sourca" },
+      { property: "og:site_name", content: "Sourcixa" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
-      { title: "Sourca" },
-      { property: "og:title", content: "Sourca" },
-      { name: "twitter:title", content: "Sourca" },
-      { name: "description", content: "Sourca Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
-      { property: "og:description", content: "Sourca Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
-      { name: "twitter:description", content: "Sourca Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b91a80e7-5a75-4e1c-9d02-a3a98eb39445/id-preview-a54d5195--b1a59fba-377d-4433-b817-9ac86d413184.lovable.app-1783086890129.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b91a80e7-5a75-4e1c-9d02-a3a98eb39445/id-preview-a54d5195--b1a59fba-377d-4433-b817-9ac86d413184.lovable.app-1783086890129.png" },
+      { title: "Sourcixa" },
+      { property: "og:title", content: "Sourcixa" },
+      { name: "twitter:title", content: "Sourcixa" },
+      { name: "description", content: "Sourcixa Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
+      { property: "og:description", content: "Sourcixa Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
+      { name: "twitter:description", content: "Sourcixa Procurement Hub streamlines sourcing by connecting suppliers, RFQs, and risk intelligence." },
+      { property: "og:image", content: "https://sourcixa.com/sourcixa-favicon.svg?v=sourcixa" },
+      { name: "twitter:image", content: "https://sourcixa.com/sourcixa-favicon.svg?v=sourcixa" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/sourcixa-favicon.svg?v=sourcixa", type: "image/svg+xml" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=sourcixa", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" },

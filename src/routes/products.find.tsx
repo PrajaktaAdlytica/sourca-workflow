@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/find")({
   head: () => ({
     meta: [
-      { title: "Sourca Find — Supplier Discovery" },
+      { title: "Sourcixa Find — Supplier Discovery" },
       { name: "description", content: "Discover verified suppliers across industries and regions using intelligent search." },
-      { property: "og:title", content: "Sourca Find — Supplier Discovery" },
+      { property: "og:title", content: "Sourcixa Find — Supplier Discovery" },
       { property: "og:description", content: "Discover verified suppliers across industries and regions using intelligent search." },
     ],
   }),
@@ -39,8 +39,8 @@ export const Route = createFileRoute("/products/find")({
       ]}
       faq={[
         { q: "How large is the supplier network?", a: "Over 120,000 verified suppliers across 98 countries, spanning manufacturing, components, packaging and industrial services." },
-        { q: "How are suppliers verified?", a: "Sourca combines certifications, financial data, references and historical performance to verify each supplier before it enters the directory." },
-        { q: "Can we add our own suppliers?", a: "Yes — you can import existing suppliers into the directory and enrich them with Sourca's intelligence layer." },
+        { q: "How are suppliers verified?", a: "Sourcixa combines certifications, financial data, references and historical performance to verify each supplier before it enters the directory." },
+        { q: "Can we add our own suppliers?", a: "Yes — you can import existing suppliers into the directory and enrich them with Sourcixa's intelligence layer." },
       ]}
     />
   ),

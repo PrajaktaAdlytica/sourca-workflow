@@ -6,9 +6,9 @@ const cols = [
   {
     title: "Product",
     links: [
-      { label: "Sourca Find", to: "/products/find" },
-      { label: "Sourca RFQ", to: "/products/rfq" },
-      { label: "Sourca Risk", to: "/products/risk" },
+      { label: "Sourcixa Find", to: "/products/find" },
+      { label: "Sourcixa RFQ", to: "/products/rfq" },
+      { label: "Sourcixa Risk", to: "/products/risk" },
     ],
   },
   {
@@ -25,7 +25,7 @@ const cols = [
     links: [
       { label: "About", to: "/about" },
       { label: "Careers", href: "#" },
-      { label: "Contact", href: "mailto:hello@sourca.io" },
+      { label: "Contact", href: "mailto:hello@sourcixa.com" },
     ],
   },
   {
@@ -49,9 +49,9 @@ export function Footer() {
               AI-powered procurement platform for supplier discovery, RFQ management and supplier risk intelligence.
             </p>
             <div className="mt-5 text-xs text-muted-foreground leading-relaxed">
-              Sourca Sp. z o.o.<br />
+              Sourcixa Sp. z o.o.<br />
               Prosta 70, 00-838 Warsaw, Poland<br />
-              hello@sourca.io · +48 22 307 44 00
+              hello@sourcixa.com · +48 22 307 44 00
             </div>
             <div className="mt-6 flex gap-2">
               <a href="#" className="p-2 rounded-lg border border-border hover:border-accent/60 hover:text-accent transition-colors" aria-label="LinkedIn">
@@ -78,7 +78,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-14 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© 2026 Sourca Sp. z o.o. — sourca.io</div>
+          <div>© 2026 Sourcixa Sp. z o.o. — sourcixa.com</div>
           <div>Warsaw · Kraków · Wrocław</div>
         </div>
       </div>

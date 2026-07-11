@@ -70,7 +70,7 @@ export function ProductPage(p: ProductPageProps) {
                 Real outcomes for procurement teams.
               </h3>
               <p className="mt-4 text-[15px] text-muted-foreground leading-relaxed max-w-md">
-                Sourca combines supplier intelligence, automation and visibility so every procurement stakeholder moves forward together.
+                Sourcixa combines supplier intelligence, automation and visibility so every procurement stakeholder moves forward together.
               </p>
             </div>
             <ul className="grid sm:grid-cols-2 gap-3">

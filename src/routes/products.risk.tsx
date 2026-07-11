@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/risk")({
   head: () => ({
     meta: [
-      { title: "Sourca Risk — Supplier Intelligence" },
+      { title: "Sourcixa Risk — Supplier Intelligence" },
       { name: "description", content: "Continuously monitor supplier financial health, compliance, ESG and operational risk." },
-      { property: "og:title", content: "Sourca Risk — Supplier Intelligence" },
+      { property: "og:title", content: "Sourcixa Risk — Supplier Intelligence" },
       { property: "og:description", content: "Continuously monitor supplier financial health, compliance, ESG and operational risk." },
     ],
   }),
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/products/risk")({
         "Report supplier posture confidently to the board",
       ]}
       faq={[
-        { q: "What data sources power the risk scores?", a: "Sourca combines internal signals with external monitoring feeds, financial data providers and public sanctions lists." },
+        { q: "What data sources power the risk scores?", a: "Sourcixa combines internal signals with external monitoring feeds, financial data providers and public sanctions lists." },
         { q: "Can we bring our own risk framework?", a: "Yes — scoring weights, tiering and control libraries are configurable to match your existing methodology." },
         { q: "How are alerts delivered?", a: "In-app, email, Slack and via webhook — with severity thresholds you control per team." },
       ]}

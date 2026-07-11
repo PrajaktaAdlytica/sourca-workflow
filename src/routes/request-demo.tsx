@@ -8,8 +8,8 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Request a Demo — Sourca" },
-      { name: "description", content: "See how Sourca helps procurement teams discover suppliers, manage RFQs and evaluate risk." },
+      { title: "Request a Demo — Sourcixa" },
+      { name: "description", content: "See how Sourcixa helps procurement teams discover suppliers, manage RFQs and evaluate risk." },
     ],
   }),
   component: RequestDemo,
@@ -37,7 +37,7 @@ function RequestDemo() {
         </Link>
         <div className="relative mt-auto max-w-md">
           <h2 className="text-4xl font-semibold tracking-tight text-balance leading-[1.05]">
-            See <span className="font-editorial text-accent">Sourca</span> in action.
+            See <span className="font-editorial text-accent">Sourcixa</span> in action.
           </h2>
           <p className="mt-4 text-sm text-primary-foreground/70">
             Walk through supplier discovery, RFQs and risk intelligence — mapped to how your team sources today.
@@ -100,7 +100,7 @@ function RequestDemo() {
                 Request Demo <ArrowRight className="h-4 w-4" />
               </Button>
               <p className="text-[11px] text-muted-foreground text-center">
-                By submitting, you agree to Sourca processing your data as described in our Privacy Policy.
+                By submitting, you agree to Sourcixa processing your data as described in our Privacy Policy.
               </p>
             </form>
           )}

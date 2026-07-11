@@ -6,9 +6,9 @@ import { ButtonLink } from "./Button";
 import { cn } from "@/lib/utils";
 
 const products = [
-  { to: "/products/find", name: "Sourca Find", desc: "Supplier discovery" },
-  { to: "/products/rfq", name: "Sourca RFQ", desc: "RFQ management" },
-  { to: "/products/risk", name: "Sourca Risk", desc: "Supplier intelligence" },
+  { to: "/products/find", name: "Sourcixa Find", desc: "Supplier discovery" },
+  { to: "/products/rfq", name: "Sourcixa RFQ", desc: "RFQ management" },
+  { to: "/products/risk", name: "Sourcixa Risk", desc: "Supplier intelligence" },
 ];
 
 export function Navbar() {
