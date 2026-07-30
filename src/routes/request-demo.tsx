@@ -4,13 +4,19 @@ import { ArrowRight, Check } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/Button";
 import { motion } from "motion/react";
+import { pageUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
       { title: "Request a Demo — Sourcixa" },
-      { name: "description", content: "See how Sourcixa helps procurement teams discover suppliers, manage RFQs and evaluate risk." },
+      {
+        name: "description",
+        content:
+          "See how Sourcixa helps procurement teams discover suppliers, manage RFQs and evaluate risk.",
+      },
     ],
+    links: [{ rel: "canonical", href: pageUrl("/request-demo") }],
   }),
   component: RequestDemo,
 });
@@ -27,10 +33,14 @@ function RequestDemo() {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       <div className="relative hidden lg:flex flex-col bg-primary text-primary-foreground p-10 overflow-hidden">
-        <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)",
-          backgroundSize: "22px 22px",
-        }} />
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)",
+            backgroundSize: "22px 22px",
+          }}
+        />
         <div className="absolute -right-40 -bottom-40 h-96 w-96 rounded-full bg-accent/25 blur-3xl" />
         <Link to="/" className="relative">
           <Logo variant="light" />
@@ -40,7 +50,8 @@ function RequestDemo() {
             See <span className="font-editorial text-accent">Sourcixa</span> in action.
           </h2>
           <p className="mt-4 text-sm text-primary-foreground/70">
-            Walk through supplier discovery, RFQs and risk intelligence — mapped to how your team sources today.
+            Walk through supplier discovery, RFQs and risk intelligence — mapped to how your team
+            sources today.
           </p>
           <ul className="mt-8 space-y-3">
             {benefits.map((b) => (
@@ -56,8 +67,17 @@ function RequestDemo() {
       </div>
 
       <div className="flex items-center justify-center px-6 py-14 bg-network">
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-md">
-          <div className="lg:hidden mb-8"><Link to="/"><Logo /></Link></div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full max-w-md"
+        >
+          <div className="lg:hidden mb-8">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
           <h1 className="text-3xl font-semibold text-primary tracking-tight">Request Demo</h1>
           <p className="mt-1.5 text-sm text-muted-foreground">
             Fill in a few details and our team will be in touch within one business day.
@@ -74,19 +94,37 @@ function RequestDemo() {
               </p>
             </div>
           ) : (
-            <form className="mt-8 space-y-4" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+            <form
+              className="mt-8 space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSent(true);
+              }}
+            >
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Full name"><input required className="input" /></Field>
-                <Field label="Job title"><input required className="input" /></Field>
+                <Field label="Full name">
+                  <input required className="input" />
+                </Field>
+                <Field label="Job title">
+                  <input required className="input" />
+                </Field>
               </div>
-              <Field label="Work email"><input required type="email" className="input" placeholder="you@company.com" /></Field>
+              <Field label="Work email">
+                <input required type="email" className="input" placeholder="you@company.com" />
+              </Field>
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Company"><input required className="input" /></Field>
-                <Field label="Country"><input required className="input" placeholder="Poland" /></Field>
+                <Field label="Company">
+                  <input required className="input" />
+                </Field>
+                <Field label="Country">
+                  <input required className="input" placeholder="Poland" />
+                </Field>
               </div>
               <Field label="Company size">
                 <select className="input" defaultValue="">
-                  <option value="" disabled>Select</option>
+                  <option value="" disabled>
+                    Select
+                  </option>
                   <option>1–50</option>
                   <option>51–250</option>
                   <option>251–1,000</option>
@@ -100,7 +138,8 @@ function RequestDemo() {
                 Request Demo <ArrowRight className="h-4 w-4" />
               </Button>
               <p className="text-[11px] text-muted-foreground text-center">
-                By submitting, you agree to Sourcixa processing your data as described in our Privacy Policy.
+                By submitting, you agree to Sourcixa processing your data as described in our
+                Privacy Policy.
               </p>
             </form>
           )}

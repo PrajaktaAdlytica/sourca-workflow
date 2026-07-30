@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, TrendingDown, ShieldCheck, Layers3, Users, Wallet, Eye, FileCheck2, Search, ScrollText, Truck, Globe, Leaf } from "lucide-react";
+import { ArrowRight, Check, Search } from "lucide-react";
 import { Shell } from "@/components/Shell";
 import { ButtonLink } from "@/components/Button";
 import { HeroWorkflow } from "@/components/HeroWorkflow";
@@ -7,50 +7,72 @@ import { TrustedBy } from "@/components/TrustedBy";
 import { ProblemCards } from "@/components/ProblemCards";
 import { SupplierDashboard } from "@/components/SupplierDashboard";
 import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
-import { CountUp, Reveal } from "@/components/Motion";
+import { Reveal, ScrollParallax } from "@/components/Motion";
 import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
+import { DecisionEvidence } from "@/components/DecisionEvidence";
+import { CinematicEntry } from "@/components/CinematicEntry";
+import { pageUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Sourcixa — Find better suppliers. Source with confidence." },
-      { name: "description", content: "AI-powered procurement platform for supplier discovery, RFQ management and supplier risk intelligence." },
+      {
+        name: "description",
+        content:
+          "AI-powered procurement platform for supplier discovery, RFQ management and supplier risk intelligence.",
+      },
     ],
+    links: [{ rel: "canonical", href: pageUrl() }],
   }),
   component: Home,
 });
 
 function Home() {
   return (
-    <Shell>
+    <Shell cinematic>
+      <CinematicEntry />
+
       {/* HERO */}
-      <section className="relative">
+      <section id="main-hero" className="relative scroll-mt-16">
         <div className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-20 md:pb-24 min-h-[82vh] flex items-center">
           <div className="grid lg:grid-cols-2 gap-14 items-center w-full">
-            <div>
+            <ScrollParallax distance={-34}>
               <Eyebrow>AI Procurement Platform</Eyebrow>
               <h1 className="mt-4 text-[42px] sm:text-5xl lg:text-[64px] leading-[1.02] font-semibold text-primary tracking-tight text-balance">
-                Find better suppliers.<br />
+                Find better suppliers.
+                <br />
                 Source with <span className="font-editorial text-accent">confidence.</span>
               </h1>
               <p className="mt-6 max-w-xl text-[16px] text-muted-foreground leading-relaxed">
-                Search suppliers, compare quotations, evaluate risk and manage procurement workflows from one intelligent sourcing platform.
+                Search suppliers, compare quotations, evaluate risk and manage procurement workflows
+                from one intelligent sourcing platform.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink to="/request-demo" variant="primary" size="lg">
                   Request Demo <ArrowRight className="h-4 w-4" />
                 </ButtonLink>
-                <ButtonLink href="#platform" variant="outline" size="lg">Explore Platform</ButtonLink>
+                <ButtonLink href="#platform" variant="outline" size="lg">
+                  Explore Platform
+                </ButtonLink>
               </div>
-              <div className="mt-8 flex items-center gap-6 text-xs text-muted-foreground">
-                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> 120K+ suppliers</div>
-                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> 98 countries</div>
-                <div className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-accent" /> EU-hosted</div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] text-muted-foreground">
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-3.5 w-3.5 text-accent" /> Sources shown
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-3.5 w-3.5 text-accent" /> Freshness shown
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-3.5 w-3.5 text-accent" /> Review path
+                </div>
               </div>
-            </div>
-            <div><HeroWorkflow /></div>
+            </ScrollParallax>
+            <ScrollParallax distance={42}>
+              <HeroWorkflow />
+            </ScrollParallax>
           </div>
         </div>
       </section>
@@ -58,7 +80,9 @@ function Home() {
       {/* PROBLEM */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <SectionHeader eyebrow="The Problem" title="Sourcing shouldn't take weeks." />
-        <div className="mt-14"><ProblemCards /></div>
+        <div className="mt-14">
+          <ProblemCards />
+        </div>
       </section>
 
       <TrustedBy />
@@ -69,28 +93,45 @@ function Home() {
           <div>
             <Eyebrow>The Solution</Eyebrow>
             <h2 className="mt-3 text-4xl lg:text-5xl font-semibold text-primary tracking-tight leading-[1.05] text-balance">
-              One intelligent <span className="font-editorial text-accent">sourcing workspace.</span>
+              One intelligent{" "}
+              <span className="font-editorial text-accent">sourcing workspace.</span>
             </h2>
             <p className="mt-5 text-[15px] text-muted-foreground leading-relaxed max-w-md">
-              Manage supplier discovery, RFQs and supplier risk inside one connected procurement platform.
+              Manage supplier discovery, RFQs and supplier risk inside one connected procurement
+              platform.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-3">
-            <ProductCard
-              tone="orange" eyebrow="Find" title="Sourcixa Find" tagline="Supplier discovery."
-              to="/products/find"
-              preview={<FindPreview />}
-            />
-            <ProductCard
-              tone="teal" eyebrow="RFQ" title="Sourcixa RFQ" tagline="RFQ management."
-              to="/products/rfq"
-              preview={<RFQPreview />}
-            />
-            <ProductCard
-              tone="slate" eyebrow="Risk" title="Sourcixa Risk" tagline="Supplier intelligence."
-              to="/products/risk"
-              preview={<RiskPreview />}
-            />
+            <Reveal>
+              <ProductCard
+                tone="orange"
+                eyebrow="Find"
+                title="Sourcixa Find"
+                tagline="Supplier discovery."
+                to="/products/find"
+                preview={<FindPreview />}
+              />
+            </Reveal>
+            <Reveal delay={0.08}>
+              <ProductCard
+                tone="teal"
+                eyebrow="RFQ"
+                title="Sourcixa RFQ"
+                tagline="RFQ management."
+                to="/products/rfq"
+                preview={<RFQPreview />}
+              />
+            </Reveal>
+            <Reveal delay={0.16}>
+              <ProductCard
+                tone="slate"
+                eyebrow="Risk"
+                title="Sourcixa Risk"
+                tagline="Supplier intelligence."
+                to="/products/risk"
+                preview={<RiskPreview />}
+              />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -119,91 +160,60 @@ function Home() {
               ))}
             </ul>
             <div className="mt-8">
-              <ButtonLink href="#platform" variant="outline" size="md">Explore Platform</ButtonLink>
+              <ButtonLink href="#platform" variant="outline" size="md">
+                Explore Platform
+              </ButtonLink>
             </div>
           </div>
-          <Reveal><SupplierDashboard /></Reveal>
+          <Reveal>
+            <SupplierDashboard />
+          </Reveal>
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <SectionHeader eyebrow="Key Benefits" title="Built for faster, smarter sourcing." description="Reduce procurement effort while improving supplier quality, transparency and decision-making across every sourcing event." />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
-          {[
-            { icon: Users, t: "Better Suppliers", d: "Access a global network of qualified suppliers." },
-            { icon: TrendingDown, t: "Faster Procurement", d: "Reduce sourcing time from weeks to days." },
-            { icon: ShieldCheck, t: "Lower Risk", d: "Identify and mitigate supplier risks early." },
-            { icon: FileCheck2, t: "Centralised RFQs", d: "Manage all RFQs in one connected place." },
-            { icon: Wallet, t: "Better Pricing", d: "Compare quotes and negotiate with confidence." },
-            { icon: Eye, t: "Supplier Visibility", d: "Track performance and build stronger relationships." },
-          ].map((b) => (
-            <div key={b.t} className="surface-card card-hover p-5">
-              <div className="h-10 w-10 rounded-lg bg-accent-soft text-accent flex items-center justify-center">
-                <b.icon className="h-5 w-5" />
-              </div>
-              <div className="mt-4 text-sm font-semibold text-primary">{b.t}</div>
-              <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{b.d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* STATISTICS */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { icon: Users, n: 120, s: "K+", l: "Suppliers" },
-            { icon: ScrollText, n: 3.8, s: "M+", l: "RFQs Managed", decimal: true },
-            { icon: TrendingDown, n: 64, s: "%", l: "Average Procurement Time Saved" },
-            { icon: Globe, n: 98, s: "", l: "Countries" },
-          ].map((k) => (
-            <div key={k.l} className="flex items-center gap-4">
-              <div className="h-11 w-11 rounded-lg bg-accent-soft text-accent flex items-center justify-center shrink-0">
-                <k.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-semibold text-primary tracking-tight">
-                  {k.decimal ? "3.8M+" : <><CountUp to={k.n} suffix={k.s} /></>}
-                </div>
-                <div className="text-xs text-muted-foreground">{k.l}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* DECISION EVIDENCE */}
+      <DecisionEvidence />
 
       {/* PRICING */}
       <section id="pricing" className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHeader eyebrow="Pricing" title="Simple, transparent pricing." description="Choose the plan that fits your team today — scale as your procurement programme grows." />
-        <div className="mt-14"><Pricing /></div>
+        <SectionHeader
+          eyebrow="Pricing"
+          title="Simple, transparent pricing."
+          description="Choose the plan that fits your team today — scale as your procurement programme grows."
+        />
+        <div className="mt-14">
+          <Pricing />
+        </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* BUYER ASSURANCE */}
       <section className="mx-auto max-w-7xl px-6 pb-8">
-        <SectionHeader eyebrow="Testimonials" title="Loved by procurement teams." />
+        <SectionHeader
+          eyebrow="Buyer assurance"
+          title="Evidence before claims."
+          description="Sourcixa is designed to make supplier research, comparisons and risk decisions inspectable—not hide them behind a single score."
+        />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {[
             {
-              q: "Sourcixa reduced supplier discovery from days to hours. The AI recommendations consistently surface qualified suppliers we would never have found manually.",
-              n: "Anna Kowalska", r: "Head of Procurement", c: "Warsaw Manufacturing Group",
+              t: "Inspect the supplier source",
+              d: "Open the legal-entity record, supporting document, integration or provider behind an important field.",
             },
             {
-              q: "Managing RFQs across dozens of suppliers is now effortless. Everything from invitations to quotation comparisons happens inside one platform.",
-              n: "Piotr Nowak", r: "Strategic Sourcing Manager", c: "Baltic Components",
+              t: "Understand the recommendation",
+              d: "See the criteria, buyer-defined weights and missing information before choosing a shortlist or award.",
             },
             {
-              q: "Supplier risk monitoring has become part of our daily workflow. We receive alerts before issues affect our supply chain.",
-              n: "Katarzyna Zielińska", r: "Procurement Director", c: "Poznań Industrial Solutions",
+              t: "Keep the review history",
+              d: "Preserve who confirmed, dismissed or escalated a finding and what remediation followed.",
             },
           ].map((t) => (
-            <div key={t.n} className="surface-card card-hover p-7 flex flex-col">
-              <div className="text-accent text-4xl leading-none font-editorial">"</div>
-              <p className="mt-2 text-[15px] text-primary/90 leading-relaxed flex-1">{t.q}</p>
-              <div className="mt-6 pt-5 border-t border-border">
-                <div className="text-sm font-semibold text-primary">{t.n}</div>
-                <div className="text-xs text-muted-foreground">{t.r} · {t.c}</div>
+            <div key={t.t} className="surface-card card-hover p-7">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                <Check className="h-4 w-4" />
               </div>
+              <div className="mt-5 text-sm font-semibold text-primary">{t.t}</div>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.d}</p>
             </div>
           ))}
         </div>
@@ -213,14 +223,34 @@ function Home() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <SectionHeader eyebrow="FAQ" title="Frequently asked questions." />
         <div className="mt-12">
-          <FAQ items={[
-            { q: "How does Sourcixa find suppliers?", a: "Sourcixa searches verified supplier databases and combines procurement intelligence, certifications and AI recommendations to help you identify qualified suppliers quickly." },
-            { q: "Can I compare supplier quotations?", a: "Yes. Sourcixa automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace." },
-            { q: "Does Sourcixa monitor supplier risk?", a: "Yes. Sourcixa continuously monitors supplier compliance, ESG performance, financial health and operational risk." },
-            { q: "Can multiple procurement teams collaborate?", a: "Yes. Procurement managers, sourcing specialists, finance teams and stakeholders can collaborate throughout the sourcing process." },
-            { q: "Does Sourcixa integrate with ERP systems?", a: "Yes. Sourcixa is designed to integrate with ERP, procurement and supplier management systems." },
-            { q: "Is Sourcixa suitable for global sourcing?", a: "Yes. Sourcixa supports international supplier discovery, multi-country sourcing and cross-border procurement workflows." },
-          ]} />
+          <FAQ
+            items={[
+              {
+                q: "How does Sourcixa find suppliers?",
+                a: "Sourcixa can combine customer records, supplier submissions, official registries and licensed provider data where available. Every important field keeps its source, timestamp and review state.",
+              },
+              {
+                q: "Can I compare supplier quotations?",
+                a: "Yes. Sourcixa automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace.",
+              },
+              {
+                q: "Does Sourcixa monitor supplier risk?",
+                a: "Sourcixa brings available compliance, ESG, financial and operational signals into a source-labelled review queue. Actual refresh cadence depends on the source and is shown in the product.",
+              },
+              {
+                q: "Can multiple procurement teams collaborate?",
+                a: "Yes. Procurement managers, sourcing specialists, finance teams and stakeholders can collaborate throughout the sourcing process.",
+              },
+              {
+                q: "Does Sourcixa integrate with ERP systems?",
+                a: "Yes. Sourcixa is designed to integrate with ERP, procurement and supplier management systems.",
+              },
+              {
+                q: "Is Sourcixa suitable for global sourcing?",
+                a: "Yes. Sourcixa supports international supplier discovery, multi-country sourcing and cross-border procurement workflows.",
+              },
+            ]}
+          />
         </div>
       </section>
 
@@ -229,8 +259,20 @@ function Home() {
   );
 }
 
-function ProductCard({ tone, eyebrow, title, tagline, to, preview }: {
-  tone: "orange" | "teal" | "slate"; eyebrow: string; title: string; tagline: string; to: string; preview: React.ReactNode;
+function ProductCard({
+  tone,
+  eyebrow,
+  title,
+  tagline,
+  to,
+  preview,
+}: {
+  tone: "orange" | "teal" | "slate";
+  eyebrow: string;
+  title: string;
+  tagline: string;
+  to: string;
+  preview: React.ReactNode;
 }) {
   const tones = {
     orange: { chip: "bg-accent text-accent-foreground", accent: "text-accent" },
@@ -240,7 +282,9 @@ function ProductCard({ tone, eyebrow, title, tagline, to, preview }: {
   return (
     <div className="surface-card card-hover p-5 flex flex-col">
       <div className="flex items-center gap-2">
-        <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${tones.chip}`}>
+        <span
+          className={`inline-flex items-center rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${tones.chip}`}
+        >
           {eyebrow}
         </span>
       </div>
@@ -266,10 +310,17 @@ function FindPreview() {
         <span className="text-[10px] text-muted-foreground">Search suppliers…</span>
       </div>
       {[
-        { n: "ElectroCo", c: "Poland" }, { n: "Voltix", c: "Germany" }, { n: "TechWire", c: "Czechia" },
+        { n: "ElectroCo", c: "Poland" },
+        { n: "Voltix", c: "Germany" },
+        { n: "TechWire", c: "Czechia" },
       ].map((s) => (
-        <div key={s.n} className="flex items-center gap-2 p-2 rounded-md border border-border bg-background/40">
-          <div className="h-6 w-6 rounded-md bg-accent-soft text-accent flex items-center justify-center text-[8px] font-bold">{s.n[0]}</div>
+        <div
+          key={s.n}
+          className="flex items-center gap-2 p-2 rounded-md border border-border bg-background/40"
+        >
+          <div className="h-6 w-6 rounded-md bg-accent-soft text-accent flex items-center justify-center text-[8px] font-bold">
+            {s.n[0]}
+          </div>
           <div className="flex-1 min-w-0">
             <div className="text-[10px] font-semibold text-primary truncate">{s.n}</div>
             <div className="text-[9px] text-muted-foreground">{s.c}</div>
@@ -286,13 +337,21 @@ function RFQPreview() {
     <table className="w-full text-[10px]">
       <thead>
         <tr className="text-muted-foreground text-left">
-          <th className="pb-1 font-normal">Supplier</th><th className="pb-1 font-normal">Price</th><th className="pb-1 font-normal">Delivery</th>
+          <th className="pb-1 font-normal">Supplier</th>
+          <th className="pb-1 font-normal">Price</th>
+          <th className="pb-1 font-normal">Delivery</th>
         </tr>
       </thead>
       <tbody className="text-primary/80">
-        {[["ElectroCo", "$4.28", "12d"], ["Voltix", "$4.65", "15d"], ["TechWire", "$4.90", "18d"]].map((r) => (
+        {[
+          ["ElectroCo", "$4.28", "12d"],
+          ["Voltix", "$4.65", "15d"],
+          ["TechWire", "$4.90", "18d"],
+        ].map((r) => (
           <tr key={r[0]} className="border-t border-border">
-            <td className="py-1.5">{r[0]}</td><td className="py-1.5 tabular-nums">{r[1]}</td><td className="py-1.5 tabular-nums">{r[2]}</td>
+            <td className="py-1.5">{r[0]}</td>
+            <td className="py-1.5 tabular-nums">{r[1]}</td>
+            <td className="py-1.5 tabular-nums">{r[2]}</td>
           </tr>
         ))}
       </tbody>
@@ -306,8 +365,16 @@ function RiskPreview() {
       <div className="relative h-20 w-20">
         <svg viewBox="0 0 64 64" className="h-20 w-20 -rotate-90">
           <circle cx="32" cy="32" r="28" className="stroke-secondary" strokeWidth="6" fill="none" />
-          <circle cx="32" cy="32" r="28" className="stroke-emerald-500" strokeWidth="6" fill="none" strokeLinecap="round"
-            strokeDasharray={`${(32 / 100) * 2 * Math.PI * 28} ${2 * Math.PI * 28}`} />
+          <circle
+            cx="32"
+            cy="32"
+            r="28"
+            className="stroke-emerald-500"
+            strokeWidth="6"
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray={`${(32 / 100) * 2 * Math.PI * 28} ${2 * Math.PI * 28}`}
+          />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="text-lg font-semibold text-primary leading-none">32</div>
@@ -315,9 +382,18 @@ function RiskPreview() {
         </div>
       </div>
       <div className="flex-1 space-y-1.5 text-[10px]">
-        <div className="flex justify-between"><span className="text-primary/70">Compliance</span><span className="text-emerald-700 font-medium">Low</span></div>
-        <div className="flex justify-between"><span className="text-primary/70">Financial</span><span className="text-amber-700 font-medium">Medium</span></div>
-        <div className="flex justify-between"><span className="text-primary/70">ESG</span><span className="text-emerald-700 font-medium">Low</span></div>
+        <div className="flex justify-between">
+          <span className="text-primary/70">Compliance</span>
+          <span className="text-emerald-700 font-medium">Low</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-primary/70">Financial</span>
+          <span className="text-amber-700 font-medium">Medium</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-primary/70">ESG</span>
+          <span className="text-emerald-700 font-medium">Low</span>
+        </div>
       </div>
     </div>
   );

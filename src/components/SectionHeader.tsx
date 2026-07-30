@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
@@ -10,15 +11,26 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 }
 
 export function SectionHeader({
-  eyebrow, title, description, align = "center",
+  eyebrow,
+  title,
+  description,
+  align = "center",
 }: {
   eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   align?: "center" | "left";
 }) {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <div className={align === "center" ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}>
+    <motion.div
+      initial={reducedMotion ? false : { opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className={align === "center" ? "text-center max-w-2xl mx-auto" : "max-w-2xl"}
+    >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[44px] leading-[1.05] font-semibold text-primary text-balance">
         {title}
@@ -26,6 +38,6 @@ export function SectionHeader({
       {description && (
         <p className="mt-4 text-[15px] text-muted-foreground leading-relaxed">{description}</p>
       )}
-    </div>
+    </motion.div>
   );
 }
