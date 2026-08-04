@@ -118,6 +118,9 @@ export function Navbar({ cinematic = false }: { cinematic?: boolean }) {
           <NavLink to="/about" inverted={inverted}>
             About
           </NavLink>
+          <NavLink to="/news/funding-announcement" inverted={inverted}>
+            Announcement
+          </NavLink>
         </div>
 
         <div className="hidden lg:flex items-center gap-2">
@@ -178,6 +181,9 @@ export function Navbar({ cinematic = false }: { cinematic?: boolean }) {
                 </a>
                 <MobileLink to="/about" onClick={() => setOpen(false)}>
                   About
+                </MobileLink>
+                <MobileLink to="/news/funding-announcement" onClick={() => setOpen(false)}>
+                  Announcement
                 </MobileLink>
               </div>
 

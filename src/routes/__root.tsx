@@ -12,6 +12,15 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { OG_IMAGE_URL, SITE_URL } from "../lib/site";
+import { CRUNCHBASE_URL, LINKEDIN_URL } from "../lib/company";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Sourcixa",
+  url: "https://sourcixa.com",
+  sameAs: [LINKEDIN_URL, CRUNCHBASE_URL],
+};
 
 function NotFoundComponent() {
   return (
@@ -124,6 +133,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body>
         {children}

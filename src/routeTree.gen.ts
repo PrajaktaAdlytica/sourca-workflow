@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as RequestDemoRouteImport } from './routes/request-demo'
 import { Route as SigninRouteImport } from './routes/signin'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NewsFundingAnnouncementRouteImport } from './routes/news.funding-announcement'
 import { Route as ProductsFindRouteImport } from './routes/products.find'
 import { Route as ProductsRfqRouteImport } from './routes/products.rfq'
 import { Route as ProductsRiskRouteImport } from './routes/products.risk'
@@ -43,6 +44,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsFundingAnnouncementRoute = NewsFundingAnnouncementRouteImport.update({
+  id: '/news/funding-announcement',
+  path: '/news/funding-announcement',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsFindRoute = ProductsFindRouteImport.update({
   id: '/products/find',
   path: '/products/find',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/request-demo': typeof RequestDemoRoute
   '/signin': typeof SigninRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/find': typeof ProductsFindRoute
   '/products/rfq': typeof ProductsRfqRoute
   '/products/risk': typeof ProductsRiskRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/request-demo'
     | '/signin'
     | '/sitemap.xml'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/request-demo'
     | '/signin'
     | '/sitemap.xml'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/request-demo'
     | '/signin'
     | '/sitemap.xml'
+    | '/news/funding-announcement'
     | '/products/find'
     | '/products/rfq'
     | '/products/risk'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   RequestDemoRoute: typeof RequestDemoRoute
   SigninRoute: typeof SigninRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  NewsFundingAnnouncementRoute: typeof NewsFundingAnnouncementRoute
   ProductsFindRoute: typeof ProductsFindRoute
   ProductsRfqRoute: typeof ProductsRfqRoute
   ProductsRiskRoute: typeof ProductsRiskRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/funding-announcement': {
+      id: '/news/funding-announcement'
+      path: '/news/funding-announcement'
+      fullPath: '/news/funding-announcement'
+      preLoaderRoute: typeof NewsFundingAnnouncementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/find': {
       id: '/products/find'
       path: '/products/find'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   RequestDemoRoute: RequestDemoRoute,
   SigninRoute: SigninRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  NewsFundingAnnouncementRoute: NewsFundingAnnouncementRoute,
   ProductsFindRoute: ProductsFindRoute,
   ProductsRfqRoute: ProductsRfqRoute,
   ProductsRiskRoute: ProductsRiskRoute,

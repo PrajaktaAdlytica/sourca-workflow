@@ -13,6 +13,7 @@ import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
 import { DecisionEvidence } from "@/components/DecisionEvidence";
 import { CinematicEntry } from "@/components/CinematicEntry";
+import { FundingAnnouncement } from "@/components/FundingAnnouncement";
 import { pageUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -218,6 +219,9 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <FundingAnnouncement />
 
       {/* FAQ */}
       <section className="mx-auto max-w-7xl px-6 py-20">

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
+import { CRUNCHBASE_URL, DLABS_PORTFOLIO_URL, LINKEDIN_URL } from "@/lib/company";
 
 const cols = [
   {
@@ -23,6 +24,7 @@ const cols = [
     title: "Company",
     links: [
       { label: "About", to: "/about" },
+      { label: "Funding announcement", to: "/news/funding-announcement" },
       { label: "Careers", href: "#" },
       { label: "Contact", href: "mailto:hello@sourcixa.com" },
     ],
@@ -53,6 +55,41 @@ export function Footer() {
               <br />
               hello@sourcixa.com
             </div>
+            <div className="mt-6 max-w-sm rounded-xl border border-border bg-surface/80 p-4">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-primary">
+                <span>Backed by Dlabs</span>
+                <span aria-hidden="true" className="text-border">
+                  /
+                </span>
+                <span>$590K funding</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+                <a
+                  href={DLABS_PORTFOLIO_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-muted-foreground transition-colors hover:text-accent"
+                >
+                  Dlabs portfolio
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-muted-foreground transition-colors hover:text-accent"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={CRUNCHBASE_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-muted-foreground transition-colors hover:text-accent"
+                >
+                  Crunchbase
+                </a>
+              </div>
+            </div>
           </div>
           {cols.map((col) => (
             <div key={col.title}>
@@ -74,6 +111,9 @@ export function Footer() {
                     <li key={l.label}>
                       <a
                         href={l.href}
+                        {...(l.href.startsWith("http")
+                          ? { target: "_blank", rel: "noreferrer noopener" }
+                          : {})}
                         className="text-primary/80 hover:text-accent transition-colors"
                       >
                         {l.label}
