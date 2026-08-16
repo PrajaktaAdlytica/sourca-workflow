@@ -50,7 +50,13 @@ export function Footer() {
               risk intelligence.
             </p>
             <div className="mt-5 text-xs text-muted-foreground leading-relaxed">
-              Poland · European Union
+              6686 George Road
+              <br />
+              Valletta, SH VLT 1012
+              <br />
+              Malta
+              <br />
+              Phone: 2507 7040
               <br />
               hello@sourcixa.com
             </div>
