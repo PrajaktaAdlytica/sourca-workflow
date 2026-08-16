@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
+import { ExternalLink, Linkedin } from "lucide-react";
 
 const cols = [
   {
@@ -26,6 +27,14 @@ const cols = [
       { label: "Funding announcement", to: "/news/funding-announcement" },
       { label: "Careers", href: "#" },
       { label: "Contact", href: "mailto:hello@sourcixa.com" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/company/sourcixa/",
+      },
+      {
+        label: "Crunchbase",
+        href: "https://www.crunchbase.com/organization/sourcixa",
+      },
     ],
   },
   {
@@ -84,8 +93,14 @@ export function Footer() {
                         {...(l.href.startsWith("http")
                           ? { target: "_blank", rel: "noreferrer noopener" }
                           : {})}
-                        className="text-primary/80 hover:text-accent transition-colors"
+                        className="inline-flex items-center gap-2 text-primary/80 hover:text-accent transition-colors"
                       >
+                        {l.href === "https://www.linkedin.com/company/sourcixa/" ? (
+                          <Linkedin className="h-4 w-4" />
+                        ) : l.href ===
+                          "https://www.crunchbase.com/organization/sourcixa" ? (
+                          <ExternalLink className="h-4 w-4" />
+                        ) : null}
                         {l.label}
                       </a>
                     </li>
