@@ -68,7 +68,7 @@ export function FindWorkspace() {
 
   return (
     <WorkspaceFrame
-      product="Sourcixa Find"
+      product="OriginCue Find"
       title="Supplier discovery"
       meta="Illustrative workspace · Synthetic supplier records"
       action={
@@ -246,7 +246,7 @@ export function RFQWorkspace() {
 
   return (
     <WorkspaceFrame
-      product="Sourcixa RFQ"
+      product="OriginCue RFQ"
       title="Wire harness sourcing · RFQ-2026-041"
       meta="Illustrative workspace · EUR · 10,000 units"
       action={
@@ -414,7 +414,7 @@ export function RiskWorkspace() {
 
   return (
     <WorkspaceFrame
-      product="Sourcixa Risk"
+      product="OriginCue Risk"
       title="Monitoring queue"
       meta="Illustrative workspace · Synthetic supplier records"
       action={
@@ -495,7 +495,7 @@ export function RiskWorkspace() {
             <div className="mt-5 rounded-xl border border-border bg-secondary/55 p-3">
               <div className="text-xs font-semibold text-primary">False-positive control</div>
               <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
-                Sourcixa keeps the raw source, match rationale and reviewer decision. No potential
+                OriginCue keeps the raw source, match rationale and reviewer decision. No potential
                 match is treated as confirmed without review.
               </p>
             </div>
@@ -692,7 +692,7 @@ export function RiskMethodology() {
     <MethodologyLayout
       eyebrow="Risk methodology"
       title="Explainable scores, configurable decisions."
-      description="Sourcixa normalises available signals into category scores, but it does not replace analyst judgment. Every score keeps its inputs, timestamp, weight and review history."
+      description="OriginCue normalises available signals into category scores, but it does not replace analyst judgment. Every score keeps its inputs, timestamp, weight and review history."
       cards={sources}
       steps={[
         {

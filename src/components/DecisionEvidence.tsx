@@ -81,13 +81,13 @@ export function DecisionEvidence() {
       <div className="grid items-start gap-12 lg:grid-cols-[0.78fr_1.72fr] lg:gap-10 xl:gap-14">
         <Reveal className="lg:sticky lg:top-24">
           <div>
-            <Eyebrow>Why Sourcixa</Eyebrow>
+            <Eyebrow>Why OriginCue</Eyebrow>
             <h2 className="mt-4 max-w-lg text-[38px] font-semibold leading-[1.02] tracking-[-0.035em] text-primary sm:text-5xl lg:text-[48px]">
               Every decision comes with the evidence behind it.
             </h2>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Sourcixa brings sourced data, explainable scoring and clear actions into one connected
-              view—so buyers can decide with confidence.
+              OriginCue brings sourced data, explainable scoring and clear actions into one
+              connected view—so buyers can decide with confidence.
             </p>
 
             <div className="mt-10 space-y-3" role="list" aria-label="Buyer outcomes">
@@ -222,13 +222,13 @@ function WorkspaceNavigation() {
     <aside className="hidden border-r border-border bg-background/55 p-4 xl:block">
       <div className="flex items-center gap-2 px-2 text-xs font-semibold text-primary">
         <img
-          src="/sourcixa-favicon.svg"
+          src="/origincue-favicon.svg"
           alt=""
           width="24"
           height="24"
           className="h-6 w-6 rounded-md"
         />
-        Sourcixa
+        OriginCue
       </div>
       <nav className="mt-7 space-y-1" aria-label="Illustrative workspace">
         {items.map((item) => {

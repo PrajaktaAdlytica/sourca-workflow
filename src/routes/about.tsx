@@ -10,17 +10,17 @@ import { CRUNCHBASE_URL, DLABS_PORTFOLIO_URL, LINKEDIN_URL } from "@/lib/company
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Sourcixa" },
+      { title: "About — OriginCue" },
       {
         name: "description",
         content:
-          "Sourcixa is building the AI procurement platform for modern European sourcing teams.",
+          "OriginCue is building the AI procurement platform for modern European sourcing teams.",
       },
-      { property: "og:title", content: "About — Sourcixa" },
+      { property: "og:title", content: "About — OriginCue" },
       {
         property: "og:description",
         content:
-          "Sourcixa is building the AI procurement platform for modern European sourcing teams.",
+          "OriginCue is building the AI procurement platform for modern European sourcing teams.",
       },
     ],
     links: [{ rel: "canonical", href: pageUrl("/about") }],
@@ -32,13 +32,13 @@ function About() {
   return (
     <Shell>
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-16">
-        <Eyebrow>About Sourcixa</Eyebrow>
+        <Eyebrow>About OriginCue</Eyebrow>
         <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
           Procurement, <span className="font-editorial text-accent">reimagined</span> around
           suppliers.
         </h1>
         <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed max-w-2xl">
-          Sourcixa was founded in Warsaw by procurement, supply-chain and engineering operators who
+          OriginCue was founded in Warsaw by procurement, supply-chain and engineering operators who
           spent years chasing supplier data across email, spreadsheets and disconnected tools. We
           built the platform we always wished existed — one workspace where supplier discovery, RFQs
           and risk intelligence finally live together.
@@ -62,7 +62,7 @@ function About() {
               <span className="text-sm font-semibold text-accent">$590K funding</span>
             </div>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Announced Aug 29, 2025. Sourcixa is part of Dlabs’ global portfolio of companies
+              Announced Aug 29, 2025. OriginCue is part of Dlabs’ global portfolio of companies
               building supply-chain intelligence for complex operating environments.
             </p>
           </div>

@@ -17,8 +17,8 @@ import { CRUNCHBASE_URL, LINKEDIN_URL } from "../lib/company";
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Sourcixa",
-  url: "https://sourcixa.com",
+  name: "OriginCue",
+  url: "https://origincue.com",
   sameAs: [LINKEDIN_URL, CRUNCHBASE_URL],
 };
 
@@ -77,9 +77,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const TITLE = "Sourcixa — AI Procurement Platform for Supplier Sourcing";
+const TITLE = "OriginCue — AI Procurement Platform for Supplier Sourcing";
 const DESC =
-  "Sourcixa is the AI procurement platform for supplier discovery, RFQ management and supplier risk intelligence. Find better suppliers and source with confidence.";
+  "OriginCue is the AI procurement platform for supplier discovery, RFQ management and supplier risk intelligence. Find better suppliers and source with confidence.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -88,11 +88,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "author", content: "Sourcixa" },
+      { name: "author", content: "OriginCue" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Sourcixa" },
+      { property: "og:site_name", content: "OriginCue" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
@@ -102,18 +102,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Sourcixa supplier discovery, RFQ comparison and supplier risk workspaces",
+        content: "OriginCue supplier discovery, RFQ comparison and supplier risk workspaces",
       },
       { name: "twitter:image", content: OG_IMAGE_URL },
       {
         name: "twitter:image:alt",
-        content: "Sourcixa supplier discovery, RFQ comparison and supplier risk workspaces",
+        content: "OriginCue supplier discovery, RFQ comparison and supplier risk workspaces",
       },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/sourcixa-favicon.svg?v=sourcixa", type: "image/svg+xml" },
-      { rel: "shortcut icon", href: "/favicon.ico?v=sourcixa", type: "image/x-icon" },
+      { rel: "icon", href: "/origincue-favicon.svg?v=origincue", type: "image/svg+xml" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=origincue", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

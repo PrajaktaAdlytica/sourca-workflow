@@ -46,7 +46,7 @@ export function CinematicEntry() {
 
   useEffect(() => {
     window.dispatchEvent(
-      new CustomEvent("sourcixa:entry-theme", { detail: { tone: active.tone } }),
+      new CustomEvent("origincue:entry-theme", { detail: { tone: active.tone } }),
     );
   }, [active.tone]);
 
@@ -210,7 +210,7 @@ export function CinematicEntry() {
                   href="#main-hero"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-accent px-6 text-sm font-medium text-white shadow-[0_14px_34px_-16px_rgba(194,65,12,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d0521a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                 >
-                  Enter Sourcixa
+                  Enter OriginCue
                   <ArrowDown className="h-4 w-4" aria-hidden="true" />
                 </a>
                 {!reducedMotion && (

@@ -5,14 +5,14 @@ import { Eyebrow } from "@/components/SectionHeader";
 import { DLABS_PORTFOLIO_URL } from "@/lib/company";
 import { pageUrl } from "@/lib/site";
 
-const TITLE = "Sourcixa secures $590K in funding from Dlabs";
+const TITLE = "OriginCue secures $590K in funding from Dlabs";
 const DESCRIPTION =
-  "Sourcixa has secured $590K in funding from Dlabs and joins its global portfolio of supply-chain intelligence companies.";
+  "OriginCue has secured $590K in funding from Dlabs and joins its global portfolio of supply-chain intelligence companies.";
 
 export const Route = createFileRoute("/news/funding-announcement")({
   head: () => ({
     meta: [
-      { title: `${TITLE} — Sourcixa` },
+      { title: `${TITLE} — OriginCue` },
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -43,24 +43,24 @@ function FundingArticle() {
             </time>
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-tight text-primary text-balance sm:text-5xl lg:text-6xl">
-            Sourcixa secures <span className="font-editorial text-accent">$590K</span> in funding
+            OriginCue secures <span className="font-editorial text-accent">$590K</span> in funding
             from Dlabs.
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
-            Sourcixa is part of Dlabs’ global portfolio of companies building supply-chain
+            OriginCue is part of Dlabs’ global portfolio of companies building supply-chain
             intelligence for complex operating environments.
           </p>
         </header>
 
         <div className="grid gap-10 py-12 md:grid-cols-[minmax(0,1fr)_240px]">
           <div className="space-y-6 text-[16px] leading-8 text-primary/80">
-            <p>Sourcixa has secured $590K in funding from Dlabs.</p>
+            <p>OriginCue has secured $590K in funding from Dlabs.</p>
             <p>
-              Sourcixa operates in supply-chain intelligence, supporting teams working across
+              OriginCue operates in supply-chain intelligence, supporting teams working across
               supplier discovery, RFQs and supplier risk.
             </p>
             <p>
-              As part of Dlabs’ global portfolio, Sourcixa joins companies building for complex
+              As part of Dlabs’ global portfolio, OriginCue joins companies building for complex
               operating environments.
             </p>
           </div>
@@ -96,7 +96,7 @@ function FundingArticle() {
           <div>
             <div className="text-sm font-semibold text-primary">Explore the Dlabs portfolio</div>
             <p className="mt-1 text-sm text-muted-foreground">
-              View Sourcixa alongside Dlabs’ global portfolio companies.
+              View OriginCue alongside Dlabs’ global portfolio companies.
             </p>
           </div>
           <a

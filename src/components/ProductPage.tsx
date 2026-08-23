@@ -56,7 +56,7 @@ export function ProductPage(p: ProductPageProps) {
         <SectionHeader
           eyebrow="Product workspace"
           title={`${p.eyebrow} in a real sourcing workflow.`}
-          description="A detailed product view using synthetic records, designed to show the decisions, evidence and hand-offs Sourcixa supports."
+          description="A detailed product view using synthetic records, designed to show the decisions, evidence and hand-offs OriginCue supports."
           align="center"
         />
         <div className="mt-12">
@@ -96,7 +96,7 @@ export function ProductPage(p: ProductPageProps) {
                 Real outcomes for procurement teams.
               </h3>
               <p className="mt-4 text-[15px] text-muted-foreground leading-relaxed max-w-md">
-                Sourcixa combines supplier intelligence, automation and visibility so every
+                OriginCue combines supplier intelligence, automation and visibility so every
                 procurement stakeholder moves forward together.
               </p>
             </div>

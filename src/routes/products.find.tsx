@@ -8,13 +8,13 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/find")({
   head: () => ({
     meta: [
-      { title: "Sourcixa Find — Supplier Discovery" },
+      { title: "OriginCue Find — Supplier Discovery" },
       {
         name: "description",
         content:
           "Discover verified suppliers across industries and regions using intelligent search.",
       },
-      { property: "og:title", content: "Sourcixa Find — Supplier Discovery" },
+      { property: "og:title", content: "OriginCue Find — Supplier Discovery" },
       {
         property: "og:description",
         content:
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/products/find")({
       faq={[
         {
           q: "How is supplier coverage measured?",
-          a: "Coverage is shown inside Sourcixa by category, geography and available source. Because public records and licensed data vary by jurisdiction, Sourcixa does not present one unsupported global coverage number.",
+          a: "Coverage is shown inside OriginCue by category, geography and available source. Because public records and licensed data vary by jurisdiction, OriginCue does not present one unsupported global coverage number.",
         },
         {
           q: "How are suppliers verified?",
@@ -89,7 +89,7 @@ export const Route = createFileRoute("/products/find")({
         },
         {
           q: "Can we add our own suppliers?",
-          a: "Yes — you can import existing suppliers into the directory and enrich them with Sourcixa's intelligence layer.",
+          a: "Yes — you can import existing suppliers into the directory and enrich them with OriginCue's intelligence layer.",
         },
       ]}
     />

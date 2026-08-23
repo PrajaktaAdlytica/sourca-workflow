@@ -9,8 +9,8 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/signin")({
   head: () => ({
     meta: [
-      { title: "Sign In — Sourcixa" },
-      { name: "description", content: "Sign in to your Sourcixa workspace." },
+      { title: "Sign In — OriginCue" },
+      { name: "description", content: "Sign in to your OriginCue workspace." },
     ],
     links: [{ rel: "canonical", href: pageUrl("/signin") }],
   }),
@@ -36,7 +36,7 @@ function SignIn() {
         </Link>
         <div className="relative mt-auto max-w-md">
           <h2 className="text-4xl font-semibold tracking-tight text-balance leading-[1.05]">
-            Welcome back to <span className="font-editorial text-accent">Sourcixa.</span>
+            Welcome back to <span className="font-editorial text-accent">OriginCue.</span>
           </h2>
           <p className="mt-4 text-sm text-primary-foreground/70">
             The AI procurement platform for supplier discovery, RFQs and supplier intelligence.
@@ -122,7 +122,7 @@ function SignIn() {
           </form>
 
           <div className="mt-6 text-center text-sm text-muted-foreground">
-            New to Sourcixa?{" "}
+            New to OriginCue?{" "}
             <Link to="/request-demo" className="text-accent hover:text-accent/80 font-medium">
               Request a demo
             </Link>

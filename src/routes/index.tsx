@@ -19,7 +19,7 @@ import { pageUrl } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sourcixa — Find better suppliers. Source with confidence." },
+      { title: "OriginCue — Find better suppliers. Source with confidence." },
       {
         name: "description",
         content:
@@ -107,7 +107,7 @@ function Home() {
               <ProductCard
                 tone="orange"
                 eyebrow="Find"
-                title="Sourcixa Find"
+                title="OriginCue Find"
                 tagline="Supplier discovery."
                 to="/products/find"
                 preview={<FindPreview />}
@@ -117,7 +117,7 @@ function Home() {
               <ProductCard
                 tone="teal"
                 eyebrow="RFQ"
-                title="Sourcixa RFQ"
+                title="OriginCue RFQ"
                 tagline="RFQ management."
                 to="/products/rfq"
                 preview={<RFQPreview />}
@@ -127,7 +127,7 @@ function Home() {
               <ProductCard
                 tone="slate"
                 eyebrow="Risk"
-                title="Sourcixa Risk"
+                title="OriginCue Risk"
                 tagline="Supplier intelligence."
                 to="/products/risk"
                 preview={<RiskPreview />}
@@ -192,7 +192,7 @@ function Home() {
         <SectionHeader
           eyebrow="Buyer assurance"
           title="Evidence before claims."
-          description="Sourcixa is designed to make supplier research, comparisons and risk decisions inspectable—not hide them behind a single score."
+          description="OriginCue is designed to make supplier research, comparisons and risk decisions inspectable—not hide them behind a single score."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {[
@@ -230,28 +230,28 @@ function Home() {
           <FAQ
             items={[
               {
-                q: "How does Sourcixa find suppliers?",
-                a: "Sourcixa can combine customer records, supplier submissions, official registries and licensed provider data where available. Every important field keeps its source, timestamp and review state.",
+                q: "How does OriginCue find suppliers?",
+                a: "OriginCue can combine customer records, supplier submissions, official registries and licensed provider data where available. Every important field keeps its source, timestamp and review state.",
               },
               {
                 q: "Can I compare supplier quotations?",
-                a: "Yes. Sourcixa automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace.",
+                a: "Yes. OriginCue automatically compares pricing, delivery times, commercial terms and supplier scores in one comparison workspace.",
               },
               {
-                q: "Does Sourcixa monitor supplier risk?",
-                a: "Sourcixa brings available compliance, ESG, financial and operational signals into a source-labelled review queue. Actual refresh cadence depends on the source and is shown in the product.",
+                q: "Does OriginCue monitor supplier risk?",
+                a: "OriginCue brings available compliance, ESG, financial and operational signals into a source-labelled review queue. Actual refresh cadence depends on the source and is shown in the product.",
               },
               {
                 q: "Can multiple procurement teams collaborate?",
                 a: "Yes. Procurement managers, sourcing specialists, finance teams and stakeholders can collaborate throughout the sourcing process.",
               },
               {
-                q: "Does Sourcixa integrate with ERP systems?",
-                a: "Yes. Sourcixa is designed to integrate with ERP, procurement and supplier management systems.",
+                q: "Does OriginCue integrate with ERP systems?",
+                a: "Yes. OriginCue is designed to integrate with ERP, procurement and supplier management systems.",
               },
               {
-                q: "Is Sourcixa suitable for global sourcing?",
-                a: "Yes. Sourcixa supports international supplier discovery, multi-country sourcing and cross-border procurement workflows.",
+                q: "Is OriginCue suitable for global sourcing?",
+                a: "Yes. OriginCue supports international supplier discovery, multi-country sourcing and cross-border procurement workflows.",
               },
             ]}
           />

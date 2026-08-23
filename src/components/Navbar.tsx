@@ -6,9 +6,9 @@ import { ButtonLink } from "./Button";
 import { cn } from "@/lib/utils";
 
 const products = [
-  { to: "/products/find", name: "Sourcixa Find", desc: "Supplier discovery" },
-  { to: "/products/rfq", name: "Sourcixa RFQ", desc: "RFQ management" },
-  { to: "/products/risk", name: "Sourcixa Risk", desc: "Supplier intelligence" },
+  { to: "/products/find", name: "OriginCue Find", desc: "Supplier discovery" },
+  { to: "/products/rfq", name: "OriginCue RFQ", desc: "RFQ management" },
+  { to: "/products/risk", name: "OriginCue Risk", desc: "Supplier intelligence" },
 ];
 
 export function Navbar({ cinematic = false }: { cinematic?: boolean }) {
@@ -38,8 +38,8 @@ export function Navbar({ cinematic = false }: { cinematic?: boolean }) {
       const themeEvent = event as CustomEvent<{ tone?: "light" | "dark" }>;
       if (themeEvent.detail?.tone) setCinematicTone(themeEvent.detail.tone);
     };
-    window.addEventListener("sourcixa:entry-theme", onTheme);
-    return () => window.removeEventListener("sourcixa:entry-theme", onTheme);
+    window.addEventListener("origincue:entry-theme", onTheme);
+    return () => window.removeEventListener("origincue:entry-theme", onTheme);
   }, [cinematic]);
 
   useEffect(() => {

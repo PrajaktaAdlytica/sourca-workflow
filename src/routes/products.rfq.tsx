@@ -8,13 +8,13 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/rfq")({
   head: () => ({
     meta: [
-      { title: "Sourcixa RFQ — RFQ Management" },
+      { title: "OriginCue RFQ — RFQ Management" },
       {
         name: "description",
         content:
           "Create RFQs, invite suppliers, receive bids and compare pricing from one collaborative workspace.",
       },
-      { property: "og:title", content: "Sourcixa RFQ — RFQ Management" },
+      { property: "og:title", content: "OriginCue RFQ — RFQ Management" },
       {
         property: "og:description",
         content:
@@ -76,7 +76,7 @@ export const Route = createFileRoute("/products/rfq")({
       faq={[
         {
           q: "Can we run multi-round RFQs?",
-          a: "Yes — Sourcixa supports single-round, multi-round and Dutch-auction style negotiations.",
+          a: "Yes — OriginCue supports single-round, multi-round and Dutch-auction style negotiations.",
         },
         {
           q: "Do suppliers need an account?",

@@ -8,13 +8,13 @@ import { motion } from "motion/react";
 export const Route = createFileRoute("/products/risk")({
   head: () => ({
     meta: [
-      { title: "Sourcixa Risk — Supplier Intelligence" },
+      { title: "OriginCue Risk — Supplier Intelligence" },
       {
         name: "description",
         content:
           "Continuously monitor supplier financial health, compliance, ESG and operational risk.",
       },
-      { property: "og:title", content: "Sourcixa Risk — Supplier Intelligence" },
+      { property: "og:title", content: "OriginCue Risk — Supplier Intelligence" },
       {
         property: "og:description",
         content:
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/products/risk")({
       faq={[
         {
           q: "What data sources power the risk scores?",
-          a: "Sourcixa can combine buyer-provided operational records, supplier documents, official registries and sanctions lists, plus licensed financial, ownership, ESG or adverse-event providers where contracted. Each signal keeps its source and timestamp.",
+          a: "OriginCue can combine buyer-provided operational records, supplier documents, official registries and sanctions lists, plus licensed financial, ownership, ESG or adverse-event providers where contracted. Each signal keeps its source and timestamp.",
         },
         {
           q: "How is the overall score calculated?",

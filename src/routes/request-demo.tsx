@@ -9,11 +9,11 @@ import { pageUrl } from "@/lib/site";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Request a Demo — Sourcixa" },
+      { title: "Request a Demo — OriginCue" },
       {
         name: "description",
         content:
-          "See how Sourcixa helps procurement teams discover suppliers, manage RFQs and evaluate risk.",
+          "See how OriginCue helps procurement teams discover suppliers, manage RFQs and evaluate risk.",
       },
     ],
     links: [{ rel: "canonical", href: pageUrl("/request-demo") }],
@@ -47,7 +47,7 @@ function RequestDemo() {
         </Link>
         <div className="relative mt-auto max-w-md">
           <h2 className="text-4xl font-semibold tracking-tight text-balance leading-[1.05]">
-            See <span className="font-editorial text-accent">Sourcixa</span> in action.
+            See <span className="font-editorial text-accent">OriginCue</span> in action.
           </h2>
           <p className="mt-4 text-sm text-primary-foreground/70">
             Walk through supplier discovery, RFQs and risk intelligence — mapped to how your team
@@ -138,7 +138,7 @@ function RequestDemo() {
                 Request Demo <ArrowRight className="h-4 w-4" />
               </Button>
               <p className="text-[11px] text-muted-foreground text-center">
-                By submitting, you agree to Sourcixa processing your data as described in our
+                By submitting, you agree to OriginCue processing your data as described in our
                 Privacy Policy.
               </p>
             </form>

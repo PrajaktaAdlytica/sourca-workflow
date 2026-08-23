@@ -13,7 +13,7 @@ export function CTA() {
               Find better suppliers faster.
             </h3>
             <p className="mt-4 text-[15px] text-muted-foreground max-w-md">
-              See how Sourcixa helps procurement teams discover, evaluate and manage suppliers
+              See how OriginCue helps procurement teams discover, evaluate and manage suppliers
               across every sourcing event.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">

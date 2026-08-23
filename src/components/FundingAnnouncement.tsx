@@ -27,11 +27,11 @@ export function FundingAnnouncement() {
                 id="funding-title"
                 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-[46px] text-balance"
               >
-                Sourcixa secures <span className="font-editorial text-orange-300">$590K</span> in
+                OriginCue secures <span className="font-editorial text-orange-300">$590K</span> in
                 funding from Dlabs.
               </h2>
               <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-base">
-                Sourcixa is part of Dlabs’ global portfolio of companies building supply-chain
+                OriginCue is part of Dlabs’ global portfolio of companies building supply-chain
                 intelligence for complex operating environments.
               </p>
             </div>
