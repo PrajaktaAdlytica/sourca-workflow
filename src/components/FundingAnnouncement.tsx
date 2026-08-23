@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Eyebrow } from "./SectionHeader";
 import { Reveal } from "./Motion";
-import { DLABS_PORTFOLIO_URL } from "@/lib/company";
+import { INVESTOR_NAME, INVESTOR_URL } from "@/lib/company";
 
 export function FundingAnnouncement() {
   return (
@@ -28,21 +28,21 @@ export function FundingAnnouncement() {
                 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-[46px] text-balance"
               >
                 OriginCue secures <span className="font-editorial text-orange-300">$590K</span> in
-                funding from Dlabs.
+                funding from {INVESTOR_NAME}.
               </h2>
               <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-base">
-                OriginCue is part of Dlabs’ global portfolio of companies building supply-chain
-                intelligence for complex operating environments.
+                OriginCue is funded by {INVESTOR_NAME} to build supply-chain intelligence for
+                complex operating environments.
               </p>
             </div>
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <a
-                href={DLABS_PORTFOLIO_URL}
+                href={INVESTOR_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-orange-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                View Dlabs portfolio <ExternalLink className="h-4 w-4" />
+                Visit Gama VC <ExternalLink className="h-4 w-4" />
               </a>
               <Link
                 to="/news/funding-announcement"

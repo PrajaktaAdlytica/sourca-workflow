@@ -5,7 +5,7 @@ import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
 import { CTA } from "@/components/CTA";
 import { ButtonLink } from "@/components/Button";
 import { ArrowRight } from "lucide-react";
-import { CRUNCHBASE_URL, DLABS_PORTFOLIO_URL, LINKEDIN_URL } from "@/lib/company";
+import { CRUNCHBASE_URL, INVESTOR_NAME, INVESTOR_URL, LINKEDIN_URL } from "@/lib/company";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -58,22 +58,22 @@ function About() {
           <div>
             <Eyebrow>Company record</Eyebrow>
             <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-2">
-              <h2 className="text-2xl font-semibold text-primary">Backed by Dlabs</h2>
+              <h2 className="text-2xl font-semibold text-primary">Funded by {INVESTOR_NAME}</h2>
               <span className="text-sm font-semibold text-accent">$590K funding</span>
             </div>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Announced Aug 29, 2025. OriginCue is part of Dlabs’ global portfolio of companies
-              building supply-chain intelligence for complex operating environments.
+              Announced Aug 29, 2025. OriginCue is funded by {INVESTOR_NAME} to build supply-chain
+              intelligence for complex operating environments.
             </p>
           </div>
           <div className="flex flex-wrap gap-2 text-sm font-medium">
             <a
-              href={DLABS_PORTFOLIO_URL}
+              href={INVESTOR_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="rounded-lg border border-border bg-background px-4 py-2.5 text-primary transition-colors hover:border-accent/40 hover:text-accent"
             >
-              Dlabs portfolio
+              Gama VC
             </a>
             <a
               href={LINKEDIN_URL}

@@ -1,8 +1,8 @@
 import { ExternalLink } from "lucide-react";
-import { CRUNCHBASE_URL, DLABS_PORTFOLIO_URL, LINKEDIN_URL } from "@/lib/company";
+import { CRUNCHBASE_URL, INVESTOR_NAME, INVESTOR_URL, LINKEDIN_URL } from "@/lib/company";
 
 const links = [
-  { label: "Dlabs portfolio", href: DLABS_PORTFOLIO_URL },
+  { label: "Gama VC", href: INVESTOR_URL },
   { label: "LinkedIn", href: LINKEDIN_URL },
   { label: "Crunchbase", href: CRUNCHBASE_URL },
 ];
@@ -12,7 +12,7 @@ export function CompanyCredibility() {
     <section className="border-t border-border bg-background" aria-label="Company credibility">
       <div className="mx-auto grid max-w-7xl gap-5 px-6 py-7 sm:grid-cols-[1fr_auto] sm:items-center">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="text-sm font-semibold text-primary">Backed by Dlabs</span>
+          <span className="text-sm font-semibold text-primary">Funded by {INVESTOR_NAME}</span>
           <span aria-hidden="true" className="hidden h-4 w-px bg-border sm:block" />
           <span className="text-sm font-semibold text-accent">$590K funding</span>
           <span className="text-xs text-muted-foreground">Announced Aug 29, 2025</span>
