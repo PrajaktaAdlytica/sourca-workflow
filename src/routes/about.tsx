@@ -1,18 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageUrl } from "@/lib/site";
 import { Shell } from "@/components/Shell";
 import { SectionHeader, Eyebrow } from "@/components/SectionHeader";
 import { CTA } from "@/components/CTA";
 import { ButtonLink } from "@/components/Button";
 import { ArrowRight } from "lucide-react";
+import { CRUNCHBASE_URL, INVESTOR_NAME, INVESTOR_URL, LINKEDIN_URL } from "@/lib/company";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Sourcixa" },
-      { name: "description", content: "Sourcixa is building the AI procurement platform for modern European sourcing teams." },
-      { property: "og:title", content: "About — Sourcixa" },
-      { property: "og:description", content: "Sourcixa is building the AI procurement platform for modern European sourcing teams." },
+      { title: "About — OriginCue" },
+      {
+        name: "description",
+        content:
+          "OriginCue is building the AI procurement platform for modern European sourcing teams.",
+      },
+      { property: "og:title", content: "About — OriginCue" },
+      {
+        property: "og:description",
+        content:
+          "OriginCue is building the AI procurement platform for modern European sourcing teams.",
+      },
     ],
+    links: [{ rel: "canonical", href: pageUrl("/about") }],
   }),
   component: About,
 });
@@ -21,28 +32,89 @@ function About() {
   return (
     <Shell>
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-16">
-        <Eyebrow>About Sourcixa</Eyebrow>
+        <Eyebrow>About OriginCue</Eyebrow>
         <h1 className="mt-4 text-5xl lg:text-6xl font-semibold text-primary tracking-tight leading-[1.02] text-balance">
-          Procurement, <span className="font-editorial text-accent">reimagined</span> around suppliers.
+          Procurement, <span className="font-editorial text-accent">reimagined</span> around
+          suppliers.
         </h1>
         <p className="mt-6 text-[17px] text-muted-foreground leading-relaxed max-w-2xl">
-          Sourcixa was founded in Warsaw by procurement, supply-chain and engineering operators who spent years chasing supplier data across email, spreadsheets and disconnected tools. We built the platform we always wished existed — one workspace where supplier discovery, RFQs and risk intelligence finally live together.
+          OriginCue was founded in Warsaw by procurement, supply-chain and engineering operators who
+          spent years chasing supplier data across email, spreadsheets and disconnected tools. We
+          built the platform we always wished existed — one workspace where supplier discovery, RFQs
+          and risk intelligence finally live together.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink to="/request-demo" variant="primary" size="lg">Request Demo <ArrowRight className="h-4 w-4" /></ButtonLink>
-          <ButtonLink to="/products/find" variant="outline" size="lg">Explore Products</ButtonLink>
+          <ButtonLink to="/request-demo" variant="primary" size="lg">
+            Request Demo <ArrowRight className="h-4 w-4" />
+          </ButtonLink>
+          <ButtonLink to="/products/find" variant="outline" size="lg">
+            Explore Products
+          </ButtonLink>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="surface-card grid gap-6 p-7 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <Eyebrow>Company record</Eyebrow>
+            <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+              <h2 className="text-2xl font-semibold text-primary">Funded by {INVESTOR_NAME}</h2>
+              <span className="text-sm font-semibold text-accent">$590K funding</span>
+            </div>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Announced Aug 29, 2025. OriginCue is funded by {INVESTOR_NAME} to build supply-chain
+              intelligence for complex operating environments.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 text-sm font-medium">
+            <a
+              href={INVESTOR_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="rounded-lg border border-border bg-background px-4 py-2.5 text-primary transition-colors hover:border-accent/40 hover:text-accent"
+            >
+              Gama VC
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="rounded-lg border border-border bg-background px-4 py-2.5 text-primary transition-colors hover:border-accent/40 hover:text-accent"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={CRUNCHBASE_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="rounded-lg border border-border bg-background px-4 py-2.5 text-primary transition-colors hover:border-accent/40 hover:text-accent"
+            >
+              Crunchbase
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { t: "Our mission", d: "Give every procurement team a single, trustworthy source of truth for their supplier ecosystem." },
-            { t: "Where we're based", d: "Headquartered in Warsaw, with team members across Kraków, Wrocław and Gdańsk serving customers across Europe." },
-            { t: "How we build", d: "Editorial software craftsmanship. Fewer, sharper features that procurement teams actually use every day." },
+            {
+              t: "Our mission",
+              d: "Give every procurement team a single, trustworthy source of truth for their supplier ecosystem.",
+            },
+            {
+              t: "Where we're based",
+              d: "Headquartered in Warsaw, with team members across Kraków, Wrocław and Gdańsk serving customers across Europe.",
+            },
+            {
+              t: "How we build",
+              d: "Editorial software craftsmanship. Fewer, sharper features that procurement teams actually use every day.",
+            },
           ].map((c) => (
             <div key={c.t} className="surface-card card-hover p-7">
-              <div className="text-xs font-semibold uppercase tracking-wider text-accent">{c.t}</div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-accent">
+                {c.t}
+              </div>
               <p className="mt-3 text-[15px] text-primary/85 leading-relaxed">{c.d}</p>
             </div>
           ))}
@@ -50,13 +122,20 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <SectionHeader eyebrow="Values" title="What we believe." description="A short list — the principles behind every design decision we make." />
+        <SectionHeader
+          eyebrow="Values"
+          title="What we believe."
+          description="A short list — the principles behind every design decision we make."
+        />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             { t: "Clarity", d: "Procurement software should reduce noise, not add to it." },
             { t: "Rigour", d: "Auditability is a feature, not an afterthought." },
             { t: "Craft", d: "Great software feels handcrafted — not templated." },
-            { t: "Trust", d: "EU-hosted, SOC 2 aligned, GDPR compliant. Always." },
+            {
+              t: "Trust",
+              d: "Sources, timestamps, assumptions and decisions should stay visible.",
+            },
           ].map((v) => (
             <div key={v.t} className="surface-card card-hover p-6">
               <div className="text-sm font-semibold text-primary">{v.t}</div>

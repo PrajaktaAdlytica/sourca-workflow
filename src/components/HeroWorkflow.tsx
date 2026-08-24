@@ -44,8 +44,12 @@ export function HeroWorkflow() {
             <Check className="h-5 w-5" strokeWidth={3} />
           </div>
           <div className="flex-1">
-            <div className="text-sm font-semibold text-primary">{finalSupplier.name} · {finalSupplier.country}</div>
-            <div className="text-[11px] text-muted-foreground">{finalSupplier.price} · {finalSupplier.delivery}</div>
+            <div className="text-sm font-semibold text-primary">
+              {finalSupplier.name} · {finalSupplier.country}
+            </div>
+            <div className="text-[11px] text-muted-foreground">
+              {finalSupplier.price} · {finalSupplier.delivery}
+            </div>
           </div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 rounded-full px-2 py-0.5">
             Best Match

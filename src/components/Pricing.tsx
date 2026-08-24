@@ -6,7 +6,14 @@ const plans = [
     name: "Starter",
     price: "€99",
     desc: "Everything small procurement teams need to discover suppliers and manage sourcing.",
-    features: ["Supplier Search", "Supplier Profiles", "Basic RFQs", "Quote Comparison", "Procurement Dashboard", "Email Support"],
+    features: [
+      "Supplier Search",
+      "Supplier Profiles",
+      "Basic RFQs",
+      "Quote Comparison",
+      "Procurement Dashboard",
+      "Email Support",
+    ],
     cta: "Start Free",
     to: "/request-demo",
   },
@@ -14,7 +21,16 @@ const plans = [
     name: "Professional",
     price: "€299",
     desc: "Advanced procurement workflows for growing organisations managing multiple sourcing projects.",
-    features: ["Everything in Starter", "Unlimited RFQs", "AI Recommendations", "Supplier Intelligence", "ESG Monitoring", "Financial Health", "Approval Workflows", "Priority Support"],
+    features: [
+      "Everything in Starter",
+      "Unlimited RFQs",
+      "AI Recommendations",
+      "Supplier Intelligence",
+      "ESG Monitoring",
+      "Financial Health",
+      "Approval Workflows",
+      "Priority Support",
+    ],
     cta: "Request Demo",
     to: "/request-demo",
     featured: true,
@@ -23,7 +39,16 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     desc: "Complete procurement intelligence for global sourcing operations.",
-    features: ["Everything in Professional", "Custom Integrations", "API Access", "Enterprise Security", "Multi-region Procurement", "Dedicated Success Manager", "Custom Reporting", "SLA Support"],
+    features: [
+      "Everything in Professional",
+      "Custom Integrations",
+      "API Access",
+      "Enterprise Security",
+      "Multi-region Procurement",
+      "Dedicated Success Manager",
+      "Custom Reporting",
+      "SLA Support",
+    ],
     cta: "Contact Sales",
     to: "/request-demo",
   },
@@ -36,7 +61,9 @@ export function Pricing() {
         <div
           key={p.name}
           className={`surface-card card-hover p-7 flex flex-col relative ${
-            p.featured ? "ring-2 ring-accent shadow-[0_30px_60px_-30px_color-mix(in_oklab,var(--accent)_50%,transparent)]" : ""
+            p.featured
+              ? "ring-2 ring-accent shadow-[0_30px_60px_-30px_color-mix(in_oklab,var(--accent)_50%,transparent)]"
+              : ""
           }`}
         >
           {p.featured && (
@@ -45,10 +72,14 @@ export function Pricing() {
             </span>
           )}
           <div className="text-sm font-semibold text-primary">{p.name}</div>
-          <p className="mt-2 text-xs text-muted-foreground leading-relaxed min-h-[42px]">{p.desc}</p>
+          <p className="mt-2 text-xs text-muted-foreground leading-relaxed min-h-[42px]">
+            {p.desc}
+          </p>
           <div className="mt-5">
             <span className="text-4xl font-semibold text-primary tracking-tight">{p.price}</span>
-            {p.price !== "Custom" && <span className="text-sm text-muted-foreground ml-1">/month</span>}
+            {p.price !== "Custom" && (
+              <span className="text-sm text-muted-foreground ml-1">/month</span>
+            )}
           </div>
           <div className="text-[11px] text-muted-foreground mt-1">
             {p.price === "Custom" ? "Contact us for pricing" : "Billed annually"}
@@ -62,7 +93,12 @@ export function Pricing() {
             ))}
           </ul>
           <div className="mt-7">
-            <ButtonLink to={p.to} variant={p.featured ? "primary" : "outline"} size="md" className="w-full">
+            <ButtonLink
+              to={p.to}
+              variant={p.featured ? "primary" : "outline"}
+              size="md"
+              className="w-full"
+            >
               {p.cta}
             </ButtonLink>
           </div>

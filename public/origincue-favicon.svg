@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Sourcixa">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="OriginCue">
   <defs>
-    <linearGradient id="sourcixaFavCore" x1="5" y1="5" x2="59" y2="59" gradientUnits="userSpaceOnUse">
+    <linearGradient id="origincueFavCore" x1="5" y1="5" x2="59" y2="59" gradientUnits="userSpaceOnUse">
       <stop stop-color="#D84A18"/>
       <stop offset="1" stop-color="#8F2E0E"/>
     </linearGradient>
-    <linearGradient id="sourcixaFavFlow" x1="18" y1="16" x2="48" y2="49" gradientUnits="userSpaceOnUse">
+    <linearGradient id="origincueFavFlow" x1="18" y1="16" x2="48" y2="49" gradientUnits="userSpaceOnUse">
       <stop stop-color="#25C7A4"/>
       <stop offset="1" stop-color="#0B8F7E"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="url(#sourcixaFavCore)" />
+  <rect width="64" height="64" rx="18" fill="url(#origincueFavCore)" />
   <path d="M19 24C26 17 38 17 45 24" stroke="#FFF7ED" stroke-width="6" stroke-linecap="round" />
   <path d="M19 40C26 47 38 47 45 40" stroke="#FFF7ED" stroke-width="6" stroke-linecap="round" />
   <path d="M23 32H41" stroke="#FFF7ED" stroke-width="6" stroke-linecap="round" />
-  <circle cx="19" cy="24" r="5" fill="url(#sourcixaFavFlow)" />
-  <circle cx="45" cy="24" r="5" fill="url(#sourcixaFavFlow)" />
-  <circle cx="19" cy="40" r="5" fill="url(#sourcixaFavFlow)" />
-  <circle cx="45" cy="40" r="5" fill="url(#sourcixaFavFlow)" />
+  <circle cx="19" cy="24" r="5" fill="url(#origincueFavFlow)" />
+  <circle cx="45" cy="24" r="5" fill="url(#origincueFavFlow)" />
+  <circle cx="19" cy="40" r="5" fill="url(#origincueFavFlow)" />
+  <circle cx="45" cy="40" r="5" fill="url(#origincueFavFlow)" />
   <rect x="27" y="27" width="12" height="12" rx="3.5" fill="#0B8F7E" />
   <path d="M30 33L32.2 35.2L36.4 29.9" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

@@ -13,7 +13,8 @@ export function CTA() {
               Find better suppliers faster.
             </h3>
             <p className="mt-4 text-[15px] text-muted-foreground max-w-md">
-              See how Sourcixa helps procurement teams discover, evaluate and manage suppliers across every sourcing event.
+              See how OriginCue helps procurement teams discover, evaluate and manage suppliers
+              across every sourcing event.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink to="/request-demo" variant="primary" size="lg">
@@ -41,14 +42,25 @@ function MiniPreview() {
         { n: "Voltix Systems", c: "Germany", s: "Active" },
         { n: "TechWire", c: "Czechia", s: "Review" },
       ].map((v, i) => (
-        <div key={v.n} className="flex items-center justify-between px-3 py-2.5 rounded-lg border border-border/70 bg-background/50">
+        <div
+          key={v.n}
+          className="flex items-center justify-between px-3 py-2.5 rounded-lg border border-border/70 bg-background/50"
+        >
           <div>
             <div className="text-xs font-medium text-primary">{v.n}</div>
             <div className="text-[10px] text-muted-foreground">{v.c}</div>
           </div>
-          <span className={`text-[10px] font-medium px-2 py-0.5 rounded ${
-            i === 0 ? "bg-emerald-50 text-emerald-700" : i === 1 ? "bg-accent-soft text-accent" : "bg-amber-50 text-amber-700"
-          }`}>{v.s}</span>
+          <span
+            className={`text-[10px] font-medium px-2 py-0.5 rounded ${
+              i === 0
+                ? "bg-emerald-50 text-emerald-700"
+                : i === 1
+                  ? "bg-accent-soft text-accent"
+                  : "bg-amber-50 text-amber-700"
+            }`}
+          >
+            {v.s}
+          </span>
         </div>
       ))}
     </div>
